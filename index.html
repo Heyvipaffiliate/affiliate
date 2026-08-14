@@ -8,13 +8,10 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
 
@@ -22,20 +19,10 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      margin: 0;
       font-family: 'Hind Siliguri', sans-serif;
       background: #020617;
-      color: white;
     }
-
-    /* =========================
-       CARD
-    ========================= */
 
     .card {
       transition: all 0.3s ease;
@@ -52,7 +39,8 @@
 
     .video-container {
       position: absolute;
-      inset: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       overflow: hidden;
@@ -75,7 +63,6 @@
     .video-overlay {
       position: absolute;
       inset: 0;
-      z-index: 1;
       background:
         linear-gradient(
           to bottom,
@@ -83,16 +70,17 @@
           rgba(0,0,0,0.52),
           rgba(0,0,0,0.82)
         );
+      z-index: 1;
     }
 
     /* =========================
-       TELEGRAM SUPPORT
+       TELEGRAM FLOAT
     ========================= */
 
     .telegram-support {
       position: fixed;
+      bottom: 24px;
       right: 20px;
-      bottom: 22px;
       z-index: 9999;
 
       display: flex;
@@ -105,23 +93,24 @@
       width: 58px;
       height: 58px;
 
+      background: #0088cc;
+      border-radius: 50%;
+
       display: flex;
       align-items: center;
       justify-content: center;
 
-      border-radius: 50%;
-
-      background: #0088cc;
       color: white;
-
-      text-decoration: none;
       font-size: 30px;
 
-      box-shadow: 0 8px 25px rgba(0,136,204,0.55);
+      text-decoration: none;
+
+      box-shadow:
+        0 8px 25px rgba(0,136,204,0.55);
+
+      transition: all 0.3s ease;
 
       animation: telegramPulse 2s infinite;
-
-      transition: 0.3s ease;
     }
 
     .telegram-support a:hover {
@@ -130,35 +119,32 @@
     }
 
     .telegram-support span {
-      padding: 3px 8px;
-
-      border-radius: 6px;
-
-      background: rgba(0,0,0,0.88);
-      border: 1px solid rgba(255,255,255,0.12);
-
-      color: white;
+      background: rgba(0,0,0,0.85);
+      color: #fff;
 
       font-size: 11px;
       font-weight: 600;
 
+      padding: 3px 8px;
+      border-radius: 6px;
+
       white-space: nowrap;
+
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
     @keyframes telegramPulse {
-
       0% {
         box-shadow: 0 0 0 0 rgba(0,136,204,0.6);
       }
 
       70% {
-        box-shadow: 0 0 0 15px rgba(0,136,204,0);
+        box-shadow: 0 0 0 14px rgba(0,136,204,0);
       }
 
       100% {
         box-shadow: 0 0 0 0 rgba(0,136,204,0);
       }
-
     }
 
     /* =========================
@@ -166,21 +152,21 @@
     ========================= */
 
     .modal {
+      display: none;
+
       position: fixed;
       inset: 0;
 
       z-index: 10000;
 
-      display: none;
+      background: rgba(0,0,0,0.78);
+
+      backdrop-filter: blur(8px);
 
       align-items: center;
       justify-content: center;
 
-      padding: 15px;
-
-      background: rgba(0,0,0,0.80);
-
-      backdrop-filter: blur(8px);
+      padding: 20px;
     }
 
     .modal.active {
@@ -192,12 +178,7 @@
       max-width: 520px;
 
       max-height: 90vh;
-
       overflow-y: auto;
-
-      padding: 24px;
-
-      border-radius: 24px;
 
       background:
         linear-gradient(
@@ -208,14 +189,17 @@
 
       border: 1px solid rgba(245,158,11,0.35);
 
-      box-shadow:
-        0 30px 80px rgba(0,0,0,0.75);
+      border-radius: 24px;
 
-      animation: modalAnimation 0.25s ease;
+      padding: 24px;
+
+      box-shadow:
+        0 30px 80px rgba(0,0,0,0.7);
+
+      animation: modalShow 0.25s ease;
     }
 
-    @keyframes modalAnimation {
-
+    @keyframes modalShow {
       from {
         opacity: 0;
         transform: translateY(20px) scale(0.96);
@@ -225,28 +209,28 @@
         opacity: 1;
         transform: translateY(0) scale(1);
       }
-
     }
 
     .modal-site {
-      width: 100%;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      padding: 14px 16px;
+      width: 100%;
+
+      padding: 15px 17px;
 
       margin-bottom: 10px;
 
       border-radius: 14px;
 
-      color: white;
-      text-decoration: none;
-
       background: rgba(255,255,255,0.05);
 
       border: 1px solid rgba(255,255,255,0.10);
+
+      color: white;
+
+      text-decoration: none;
 
       transition: all 0.25s ease;
     }
@@ -266,23 +250,20 @@
     }
 
     .site-number {
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
 
-      flex-shrink: 0;
+      border-radius: 10px;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      border-radius: 10px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #f59e0b,
-          #ea580c
-        );
+      background: linear-gradient(
+        135deg,
+        #f59e0b,
+        #ea580c
+      );
 
       color: #000;
 
@@ -291,32 +272,32 @@
 
     .site-arrow {
       color: #fbbf24;
-      font-size: 17px;
+      font-size: 18px;
     }
 
     .close-btn {
       width: 38px;
       height: 38px;
 
+      border-radius: 50%;
+
       display: flex;
       align-items: center;
       justify-content: center;
 
-      border-radius: 50%;
-
-      border: 1px solid rgba(255,255,255,0.10);
-
       background: rgba(255,255,255,0.08);
 
-      color: white;
+      color: #fff;
+
+      border: 1px solid rgba(255,255,255,0.1);
 
       cursor: pointer;
 
-      transition: 0.2s ease;
+      transition: all 0.2s ease;
     }
 
     .close-btn:hover {
-      background: rgba(239,68,68,0.85);
+      background: rgba(239,68,68,0.8);
     }
 
     /* =========================
@@ -326,8 +307,8 @@
     @media (max-width: 640px) {
 
       .telegram-support {
-        right: 13px;
-        bottom: 15px;
+        right: 14px;
+        bottom: 16px;
       }
 
       .telegram-support a {
@@ -337,7 +318,7 @@
       }
 
       .modal {
-        padding: 10px;
+        padding: 12px;
       }
 
       .modal-box {
@@ -351,60 +332,52 @@
 </head>
 
 
-<body>
+<body class="bg-slate-950 text-white">
 
 
-<!-- =========================================================
-     TELEGRAM SUPPORT
-========================================================= -->
+<!-- =====================================================
+     TELEGRAM FLOATING SUPPORT
+===================================================== -->
 
 <div class="telegram-support">
 
-  <a
-    href="TELEGRAM_SUPPORT_URL"
-    target="_blank"
-    rel="noopener noreferrer"
-    title="টেলিগ্রাম সাপোর্ট">
+  <a href="https://t.me/heyvipBD"
+     target="_blank"
+     title="টেলিগ্রাম সাপোর্ট">
 
     <i class="fa-brands fa-telegram"></i>
 
   </a>
 
-  <span>
-    টেলিগ্রাম সাপোর্ট
-  </span>
+  <span>টেলিগ্রাম সাপোর্ট</span>
 
 </div>
 
 
-<!-- =========================================================
+<!-- =====================================================
      SIGN UP MODAL
-========================================================= -->
+===================================================== -->
 
-<div
-  id="signupModal"
-  class="modal"
-  onclick="closeOutside(event, 'signupModal')">
+<div id="signupModal"
+     class="modal"
+     onclick="closeModalOutside(event, 'signupModal')">
 
   <div class="modal-box">
 
-    <div class="flex items-center justify-between">
+    <div class="flex items-center justify-between mb-2">
 
       <div>
-
         <h2 class="text-2xl font-bold">
           সাইন আপ করুন
         </h2>
 
         <p class="text-slate-400 text-sm mt-1">
-          আপনার পছন্দের প্রোগ্রাম নির্বাচন করুন
+          আপনার পছন্দের প্ল্যাটফর্ম নির্বাচন করুন
         </p>
-
       </div>
 
-      <button
-        class="close-btn"
-        onclick="closeModal('signupModal')">
+      <button class="close-btn"
+              onclick="closeModal('signupModal')">
 
         <i class="fa-solid fa-xmark"></i>
 
@@ -416,13 +389,11 @@
     <div class="mt-5">
 
 
-      <!-- 1 -->
+      <!-- BETJILI -->
 
-      <a
-        href="BETJILI_SIGNUP_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="modal-site">
+      <a href="https://betjili11.vip/saf/690u8aoF"
+         target="_blank"
+         class="modal-site">
 
         <div class="modal-site-left">
 
@@ -431,7 +402,6 @@
           </div>
 
           <div>
-
             <div class="font-bold">
               BETJILI
             </div>
@@ -439,7 +409,6 @@
             <div class="text-xs text-slate-400">
               ৫০% পর্যন্ত কমিশন
             </div>
-
           </div>
 
         </div>
@@ -449,13 +418,11 @@
       </a>
 
 
-      <!-- 2 -->
+      <!-- MOSTPLAY -->
 
-      <a
-        href="MOSTPLAY_SIGNUP_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="modal-site">
+      <a href="https://mostplayipl.club/saf/Q4r0A44m"
+         target="_blank"
+         class="modal-site">
 
         <div class="modal-site-left">
 
@@ -464,7 +431,6 @@
           </div>
 
           <div>
-
             <div class="font-bold">
               MOSTPLAY
             </div>
@@ -472,7 +438,6 @@
             <div class="text-xs text-slate-400">
               ৫০% নেট প্রফিট
             </div>
-
           </div>
 
         </div>
@@ -482,13 +447,11 @@
       </a>
 
 
-      <!-- 3 -->
+      <!-- DARAZPLAY -->
 
-      <a
-        href="DARAZPLAY_SIGNUP_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="modal-site">
+      <a href="https://darazplay.online/saf/kXvM9k6i"
+         target="_blank"
+         class="modal-site">
 
         <div class="modal-site-left">
 
@@ -497,7 +460,6 @@
           </div>
 
           <div>
-
             <div class="font-bold">
               DARAZPLAY
             </div>
@@ -505,7 +467,6 @@
             <div class="text-xs text-slate-400">
               ৬০% পর্যন্ত কমিশন
             </div>
-
           </div>
 
         </div>
@@ -515,13 +476,11 @@
       </a>
 
 
-      <!-- 4 -->
+      <!-- BETVISA -->
 
-      <a
-        href="BETVISA_SIGNUP_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="modal-site">
+      <a href="https://betvisafun.com/saf/WWa7uoma"
+         target="_blank"
+         class="modal-site">
 
         <div class="modal-site-left">
 
@@ -530,7 +489,6 @@
           </div>
 
           <div>
-
             <div class="font-bold">
               BETVISA
             </div>
@@ -538,7 +496,6 @@
             <div class="text-xs text-slate-400">
               উচ্চ কমিশন প্রোগ্রাম
             </div>
-
           </div>
 
         </div>
@@ -548,13 +505,11 @@
       </a>
 
 
-      <!-- 5 -->
+      <!-- JEETWAY -->
 
-      <a
-        href="JEETWAY_SIGNUP_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="modal-site">
+      <a href="https://jeetwayaffiliate.com/saf/Th21lHTe"
+         target="_blank"
+         class="modal-site">
 
         <div class="modal-site-left">
 
@@ -563,7 +518,6 @@
           </div>
 
           <div>
-
             <div class="font-bold">
               JEETWAY
             </div>
@@ -571,7 +525,6 @@
             <div class="text-xs text-slate-400">
               ৫০% মাসিক কমিশন
             </div>
-
           </div>
 
         </div>
@@ -581,13 +534,11 @@
       </a>
 
 
-      <!-- 6 -->
+      <!-- BETJDB -->
 
-      <a
-        href="BETJDB_SIGNUP_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="modal-site">
+      <a href="https://betjdb.net/saf/b81lQ4Yw"
+         target="_blank"
+         class="modal-site">
 
         <div class="modal-site-left">
 
@@ -596,7 +547,6 @@
           </div>
 
           <div>
-
             <div class="font-bold">
               BETJDB
             </div>
@@ -604,7 +554,6 @@
             <div class="text-xs text-slate-400">
               ৪৫% পর্যন্ত কমিশন
             </div>
-
           </div>
 
         </div>
@@ -614,13 +563,11 @@
       </a>
 
 
-      <!-- 7 -->
+      <!-- SBJ66 -->
 
-      <a
-        href="SBJ66_SIGNUP_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="modal-site">
+      <a href="http://sbj66.fun/saf/d4Ll9WT2"
+         target="_blank"
+         class="modal-site">
 
         <div class="modal-site-left">
 
@@ -629,7 +576,6 @@
           </div>
 
           <div>
-
             <div class="font-bold">
               SBJ66
             </div>
@@ -637,7 +583,6 @@
             <div class="text-xs text-slate-400">
               মাসিক কমিশন
             </div>
-
           </div>
 
         </div>
@@ -650,9 +595,9 @@
     </div>
 
 
-    <p class="text-center text-xs text-slate-500 mt-4">
-      আপনার পছন্দের প্রোগ্রাম নির্বাচন করে এগিয়ে যান
-    </p>
+    <div class="mt-4 text-center text-xs text-slate-500">
+      যেকোনো একটি প্ল্যাটফর্ম নির্বাচন করে সাইন আপ করুন
+    </div>
 
   </div>
 
@@ -660,18 +605,17 @@
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      LOGIN MODAL
-========================================================= -->
+===================================================== -->
 
-<div
-  id="loginModal"
-  class="modal"
-  onclick="closeOutside(event, 'loginModal')">
+<div id="loginModal"
+     class="modal"
+     onclick="closeModalOutside(event, 'loginModal')">
 
   <div class="modal-box">
 
-    <div class="flex items-center justify-between">
+    <div class="flex items-center justify-between mb-2">
 
       <div>
 
@@ -680,14 +624,13 @@
         </h2>
 
         <p class="text-slate-400 text-sm mt-1">
-          যে প্রোগ্রামে লগ ইন করতে চান সেটি নির্বাচন করুন
+          যে প্ল্যাটফর্মে লগ ইন করতে চান সেটি নির্বাচন করুন
         </p>
 
       </div>
 
-      <button
-        class="close-btn"
-        onclick="closeModal('loginModal')">
+      <button class="close-btn"
+              onclick="closeModal('loginModal')">
 
         <i class="fa-solid fa-xmark"></i>
 
@@ -699,13 +642,11 @@
     <div class="mt-5">
 
 
-      <!-- 1 -->
+      <!-- BETJILI LOGIN -->
 
-      <a
-        href="BETJILI_LOGIN_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="modal-site">
+      <a href="https://betjili11.vip/saf/690u8aoF"
+         target="_blank"
+         class="modal-site">
 
         <div class="modal-site-left">
 
@@ -724,13 +665,11 @@
       </a>
 
 
-      <!-- 2 -->
+      <!-- MOSTPLAY LOGIN -->
 
-      <a
-        href="MOSTPLAY_LOGIN_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="modal-site">
+      <a href="https://mostplayipl.club/saf/Q4r0A44m"
+         target="_blank"
+         class="modal-site">
 
         <div class="modal-site-left">
 
@@ -749,13 +688,11 @@
       </a>
 
 
-      <!-- 3 -->
+      <!-- DARAZPLAY LOGIN -->
 
-      <a
-        href="DARAZPLAY_LOGIN_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="modal-site">
+      <a href="https://darazplay.online/saf/kXvM9k6i"
+         target="_blank"
+         class="modal-site">
 
         <div class="modal-site-left">
 
@@ -774,13 +711,11 @@
       </a>
 
 
-      <!-- 4 -->
+      <!-- BETVISA LOGIN -->
 
-      <a
-        href="BETVISA_LOGIN_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="modal-site">
+      <a href="https://betvisafun.com/saf/WWa7uoma"
+         target="_blank"
+         class="modal-site">
 
         <div class="modal-site-left">
 
@@ -799,13 +734,11 @@
       </a>
 
 
-      <!-- 5 -->
+      <!-- JEETWAY LOGIN -->
 
-      <a
-        href="JEETWAY_LOGIN_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="modal-site">
+      <a href="https://jeetwayaffiliate.com/saf/Th21lHTe"
+         target="_blank"
+         class="modal-site">
 
         <div class="modal-site-left">
 
@@ -824,13 +757,11 @@
       </a>
 
 
-      <!-- 6 -->
+      <!-- BETJDB LOGIN -->
 
-      <a
-        href="BETJDB_LOGIN_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="modal-site">
+      <a href="https://betjdb.net/saf/b81lQ4Yw"
+         target="_blank"
+         class="modal-site">
 
         <div class="modal-site-left">
 
@@ -849,13 +780,11 @@
       </a>
 
 
-      <!-- 7 -->
+      <!-- SBJ66 LOGIN -->
 
-      <a
-        href="SBJ66_LOGIN_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="modal-site">
+      <a href="http://sbj66.fun/saf/d4Ll9WT2"
+         target="_blank"
+         class="modal-site">
 
         <div class="modal-site-left">
 
@@ -877,9 +806,9 @@
     </div>
 
 
-    <p class="text-center text-xs text-slate-500 mt-4">
-      আপনার পছন্দের প্রোগ্রাম নির্বাচন করে লগ ইন করুন
-    </p>
+    <div class="mt-4 text-center text-xs text-slate-500">
+      আপনার প্ল্যাটফর্ম নির্বাচন করে লগ ইন পেজে যান
+    </div>
 
   </div>
 
@@ -887,30 +816,27 @@
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      HEADER
-========================================================= -->
+===================================================== -->
 
-<header
-  class="bg-black/85 backdrop-blur-md border-b border-amber-500/20 sticky top-0 z-50">
+<header class="bg-black/85 backdrop-blur-md border-b border-amber-500/20 sticky top-0 z-50">
 
-  <div
-    class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
 
 
     <!-- LOGO -->
 
     <div class="flex items-center">
 
-      <img
-        src="heyvip-logo.png"
-        alt="HeyVIP"
-        class="h-11 md:h-12 object-contain">
+      <img src="heyvip-logo.png"
+           alt="HeyVIP"
+           class="h-11 md:h-12 object-contain">
 
     </div>
 
 
-    <!-- TOP BUTTONS -->
+    <!-- BUTTONS -->
 
     <div class="flex items-center gap-2 md:gap-3">
 
@@ -949,14 +875,11 @@
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      HERO
-========================================================= -->
+===================================================== -->
 
-<section
-  class="relative h-[420px] md:h-[520px]
-         flex items-center justify-center
-         overflow-hidden">
+<section class="relative h-[420px] md:h-[520px] flex items-center justify-center overflow-hidden">
 
 
   <!-- VIDEO -->
@@ -971,12 +894,10 @@
       playsinline
       preload="auto">
 
-      <source
-        src="roulette-bg.mp4"
-        type="video/mp4">
+      <source src="roulette-bg.mp4" type="video/mp4">
 
       <source
-        src="YOUR_VIDEO_URL"
+        src="https://drive.google.com/uc?export=download&id=1OBq2HF_1n9dUHcb-a6qNj9TfcLBpA8vD"
         type="video/mp4">
 
     </video>
@@ -991,14 +912,9 @@
 
   <!-- HERO CONTENT -->
 
-  <div
-    class="relative z-10 text-center px-4
-           max-w-4xl mx-auto">
+  <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
 
-
-    <h1
-      class="text-3xl md:text-5xl font-bold
-             mb-4 leading-tight drop-shadow-lg">
+    <h2 class="text-3xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg">
 
       বাংলাদেশের
 
@@ -1006,13 +922,10 @@
         সেরা অ্যাফিলিয়েট প্রোগ্রাম
       </span>
 
-    </h1>
+    </h2>
 
 
-    <p
-      class="text-slate-200
-             text-lg md:text-xl
-             max-w-2xl mx-auto">
+    <p class="text-slate-200 text-lg md:text-xl max-w-2xl mx-auto drop-shadow">
 
       শূন্য বিনিয়োগে শুরু করুন • লাইফটাইম কমিশন •
       অতিরিক্ত ক্যাশ বোনাস • দ্রুত পেমেন্ট
@@ -1020,20 +933,14 @@
     </p>
 
 
-    <!-- HERO BUTTONS -->
-
-    <div
-      class="mt-7 flex flex-wrap
-             justify-center gap-3">
-
+    <div class="mt-7 flex flex-wrap justify-center gap-3">
 
       <button
         onclick="openModal('signupModal')"
         class="bg-gradient-to-r from-amber-500 to-orange-500
                hover:from-amber-400 hover:to-orange-400
                text-black font-bold
-               px-7 py-3 rounded-xl
-               transition shadow-xl">
+               px-7 py-3 rounded-xl transition shadow-xl">
 
         এখনই সাইন আপ করুন
 
@@ -1045,13 +952,11 @@
         class="bg-white/10 hover:bg-white/20
                border border-white/20
                text-white font-bold
-               px-7 py-3 rounded-xl
-               transition">
+               px-7 py-3 rounded-xl transition">
 
         লগ ইন করুন
 
       </button>
-
 
     </div>
 
@@ -1061,35 +966,25 @@
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      PROGRAMS
-========================================================= -->
+===================================================== -->
 
 <section class="max-w-7xl mx-auto px-4 py-14">
 
   <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
 
 
-    <!-- =====================================================
-         BETJILI
-    ===================================================== -->
+    <!-- 1 BETJILI -->
 
-    <div
-      class="card bg-slate-900/90
-             border border-amber-500/40
-             rounded-2xl overflow-hidden">
+    <div class="card bg-slate-900/90 border border-amber-500/40 rounded-2xl overflow-hidden">
 
-
-      <div
-        class="bg-gradient-to-r
-               from-amber-600 to-orange-600
-               p-5 flex items-center gap-4">
+      <div class="bg-gradient-to-r from-amber-600 to-orange-600 p-5 flex items-center gap-4">
 
         <img
-          src="BETJILI_LOGO_URL"
-          alt="BETJILI"
-          class="h-12 object-contain
-                 bg-white rounded-lg px-3 py-1">
+          src="https://heyvip.com/wp-content/uploads/2025/05/betjili-1.png"
+          alt="Betjili"
+          class="h-12 object-contain bg-white rounded-lg px-3 py-1">
 
         <div>
 
@@ -1108,21 +1003,12 @@
 
       <div class="p-5 space-y-4">
 
+        <div class="grid grid-cols-2 gap-3">
 
-        <div
-          class="grid grid-cols-2 gap-3">
+          <div class="bg-amber-500/20 border border-amber-500/40 rounded-xl p-3 text-center">
 
-
-          <div
-            class="bg-amber-500/20
-                   border border-amber-500/40
-                   rounded-xl p-3 text-center">
-
-            <div
-              class="text-2xl font-bold text-amber-400">
-
+            <div class="text-2xl font-bold text-amber-400">
               ৫০%
-
             </div>
 
             <div class="text-xs text-slate-300">
@@ -1132,16 +1018,10 @@
           </div>
 
 
-          <div
-            class="bg-amber-500/20
-                   border border-amber-500/40
-                   rounded-xl p-3 text-center">
+          <div class="bg-amber-500/20 border border-amber-500/40 rounded-xl p-3 text-center">
 
-            <div
-              class="text-2xl font-bold text-amber-400">
-
+            <div class="text-2xl font-bold text-amber-400">
               ৪৫%
-
             </div>
 
             <div class="text-xs text-slate-300">
@@ -1150,72 +1030,40 @@
 
           </div>
 
-
         </div>
 
 
-        <div
-          class="bg-emerald-500/10
-                 border border-emerald-500/30
-                 rounded-xl p-3">
+        <div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-3">
 
-          <p
-            class="text-sm font-medium
-                   text-emerald-400">
-
+          <p class="text-sm font-medium text-emerald-400">
             🎁 অতিরিক্ত ক্যাশ বোনাস
-
           </p>
 
-          <p
-            class="text-xs text-slate-300 mt-1">
-
-            ডাউনলাইন পারফরম্যান্স অনুযায়ী
-            অতিরিক্ত বোনাস
-
+          <p class="text-xs text-slate-300 mt-1">
+            ডাউনলাইন পারফরম্যান্স অনুযায়ী অতিরিক্ত বোনাস
           </p>
 
         </div>
 
 
-        <ul
-          class="space-y-1.5
-                 text-sm text-slate-300">
+        <ul class="space-y-1.5 text-sm text-slate-300">
 
-          <li>
-            ✓ ফ্রি রেজিস্ট্রেশন
-          </li>
-
-          <li>
-            ✓ দ্রুত পেমেন্ট • স্বচ্ছ রিপোর্ট
-          </li>
-
-          <li>
-            ✓ লাইফটাইম রেভিনিউ শেয়ার
-          </li>
+          <li>✓ ফ্রি রেজিস্ট্রেশন • কোনো বিনিয়োগ প্রয়োজন নেই</li>
+          <li>✓ দ্রুত পেমেন্ট • স্বচ্ছ রিপোর্ট</li>
+          <li>✓ লাইফটাইম রেভিনিউ শেয়ার</li>
 
         </ul>
 
 
-        <!-- DIRECT LINK -->
-
-        <a
-          href="BETJILI_SIGNUP_URL"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block w-full
-                 bg-gradient-to-r
-                 from-amber-500 to-orange-500
-                 hover:from-amber-400
-                 hover:to-orange-400
-                 text-black font-bold
-                 text-center py-3
-                 rounded-xl transition">
+        <button
+          onclick="openModal('signupModal')"
+          class="block w-full bg-gradient-to-r from-amber-500 to-orange-500
+                 hover:from-amber-400 hover:to-orange-400
+                 text-black font-bold text-center py-3 rounded-xl transition">
 
           সাইন আপ করুন
 
-        </a>
-
+        </button>
 
       </div>
 
@@ -1223,26 +1071,16 @@
 
 
 
-    <!-- =====================================================
-         MOSTPLAY
-    ===================================================== -->
+    <!-- 2 MOSTPLAY -->
 
-    <div
-      class="card bg-slate-900/90
-             border border-blue-500/40
-             rounded-2xl overflow-hidden">
+    <div class="card bg-slate-900/90 border border-blue-500/40 rounded-2xl overflow-hidden">
 
-
-      <div
-        class="bg-gradient-to-r
-               from-blue-600 to-indigo-600
-               p-5 flex items-center gap-4">
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-5 flex items-center gap-4">
 
         <img
-          src="MOSTPLAY_LOGO_URL"
-          alt="MOSTPLAY"
-          class="h-12 object-contain
-                 bg-white rounded-lg px-3 py-1">
+          src="https://heyvip.com/wp-content/uploads/2025/05/mostplay-1.png"
+          alt="MostPlay"
+          class="h-12 object-contain bg-white rounded-lg px-3 py-1">
 
         <div>
 
@@ -1261,18 +1099,10 @@
 
       <div class="p-5 space-y-4">
 
+        <div class="bg-blue-500/20 border border-blue-500/40 rounded-xl p-4 text-center">
 
-        <div
-          class="bg-blue-500/20
-                 border border-blue-500/40
-                 rounded-xl p-4 text-center">
-
-          <div
-            class="text-3xl font-bold
-                   text-blue-400">
-
+          <div class="text-3xl font-bold text-blue-400">
             ৫০%
-
           </div>
 
           <div class="text-sm text-slate-300">
@@ -1282,9 +1112,7 @@
         </div>
 
 
-        <div
-          class="grid grid-cols-2 gap-2
-                 text-xs">
+        <div class="grid grid-cols-2 gap-2 text-xs">
 
           <div class="bg-slate-800 rounded-lg p-2 text-center">
             ক্রিকেট এক্সচেঞ্জ
@@ -1305,46 +1133,28 @@
         </div>
 
 
-        <div
-          class="bg-blue-500/10
-                 border border-blue-500/30
-                 rounded-xl p-3">
+        <div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-3">
 
-          <p
-            class="text-sm font-medium
-                   text-blue-400">
-
+          <p class="text-sm font-medium text-blue-400">
             🎁 অতিরিক্ত সুবিধা
-
           </p>
 
-          <p
-            class="text-xs text-slate-300 mt-1">
-
-            ফ্রি রেজিস্ট্রেশন + দ্রুত পেমেন্ট
-
+          <p class="text-xs text-slate-300 mt-1">
+            ফ্রি রেজিস্ট্রেশন + কোনো বিনিয়োগ প্রয়োজন নেই + দ্রুত পেমেন্ট
           </p>
 
         </div>
 
 
-        <a
-          href="MOSTPLAY_SIGNUP_URL"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block w-full
-                 bg-gradient-to-r
-                 from-blue-500 to-indigo-500
-                 hover:from-blue-400
-                 hover:to-indigo-400
-                 text-white font-bold
-                 text-center py-3
-                 rounded-xl transition">
+        <button
+          onclick="openModal('signupModal')"
+          class="block w-full bg-gradient-to-r from-blue-500 to-indigo-500
+                 hover:from-blue-400 hover:to-indigo-400
+                 text-white font-bold text-center py-3 rounded-xl transition">
 
           সাইন আপ করুন
 
-        </a>
-
+        </button>
 
       </div>
 
@@ -1352,26 +1162,16 @@
 
 
 
-    <!-- =====================================================
-         DARAZPLAY
-    ===================================================== -->
+    <!-- 3 DARAZPLAY -->
 
-    <div
-      class="card bg-slate-900/90
-             border border-emerald-500/40
-             rounded-2xl overflow-hidden">
+    <div class="card bg-slate-900/90 border border-emerald-500/40 rounded-2xl overflow-hidden">
 
-
-      <div
-        class="bg-gradient-to-r
-               from-emerald-600 to-teal-600
-               p-5 flex items-center gap-4">
+      <div class="bg-gradient-to-r from-emerald-600 to-teal-600 p-5 flex items-center gap-4">
 
         <img
-          src="DARAZPLAY_LOGO_URL"
-          alt="DARAZPLAY"
-          class="h-12 object-contain
-                 bg-white rounded-lg px-3 py-1">
+          src="https://heyvip.com/wp-content/uploads/2025/05/darazplay.png"
+          alt="DarazPlay"
+          class="h-12 object-contain bg-white rounded-lg px-3 py-1">
 
         <div>
 
@@ -1390,18 +1190,10 @@
 
       <div class="p-5 space-y-4">
 
+        <div class="bg-emerald-500/20 border border-emerald-500/40 rounded-xl p-4 text-center">
 
-        <div
-          class="bg-emerald-500/20
-                 border border-emerald-500/40
-                 rounded-xl p-4 text-center">
-
-          <div
-            class="text-3xl font-bold
-                   text-emerald-400">
-
+          <div class="text-3xl font-bold text-emerald-400">
             ৬০%
-
           </div>
 
           <div class="text-sm text-slate-300">
@@ -1411,65 +1203,37 @@
         </div>
 
 
-        <div
-          class="bg-emerald-500/10
-                 border border-emerald-500/30
-                 rounded-xl p-3">
+        <div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-3">
 
-          <p
-            class="text-sm font-medium
-                   text-emerald-400">
-
+          <p class="text-sm font-medium text-emerald-400">
             🎁 অতিরিক্ত ক্যাশ বোনাস
-
           </p>
 
-          <p
-            class="text-xs text-slate-300 mt-1">
-
-            উচ্চ পারফরম্যান্সে অতিরিক্ত বোনাস
-
+          <p class="text-xs text-slate-300 mt-1">
+            উচ্চ পারফরম্যান্সে অতিরিক্ত ক্যাশ বোনাস
           </p>
 
         </div>
 
 
-        <ul
-          class="space-y-1.5
-                 text-sm text-slate-300">
+        <ul class="space-y-1.5 text-sm text-slate-300">
 
-          <li>
-            ✓ ফ্রি রেজিস্ট্রেশন
-          </li>
-
-          <li>
-            ✓ লাইফটাইম কমিশন
-          </li>
-
-          <li>
-            ✓ উচ্চ পেআউট রেট
-          </li>
+          <li>✓ বাংলাদেশি প্রিমিয়াম গেমিং অ্যাপ</li>
+          <li>✓ লাইফটাইম কমিশন</li>
+          <li>✓ উচ্চ পেআউট রেট</li>
 
         </ul>
 
 
-        <a
-          href="DARAZPLAY_SIGNUP_URL"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block w-full
-                 bg-gradient-to-r
-                 from-emerald-500 to-teal-500
-                 hover:from-emerald-400
-                 hover:to-teal-400
-                 text-black font-bold
-                 text-center py-3
-                 rounded-xl transition">
+        <button
+          onclick="openModal('signupModal')"
+          class="block w-full bg-gradient-to-r from-emerald-500 to-teal-500
+                 hover:from-emerald-400 hover:to-teal-400
+                 text-black font-bold text-center py-3 rounded-xl transition">
 
           সাইন আপ করুন
 
-        </a>
-
+        </button>
 
       </div>
 
@@ -1477,26 +1241,16 @@
 
 
 
-    <!-- =====================================================
-         BETVISA
-    ===================================================== -->
+    <!-- 4 BETVISA -->
 
-    <div
-      class="card bg-slate-900/90
-             border border-violet-500/40
-             rounded-2xl overflow-hidden">
+    <div class="card bg-slate-900/90 border border-violet-500/40 rounded-2xl overflow-hidden">
 
-
-      <div
-        class="bg-gradient-to-r
-               from-violet-600 to-purple-600
-               p-5 flex items-center gap-4">
+      <div class="bg-gradient-to-r from-violet-600 to-purple-600 p-5 flex items-center gap-4">
 
         <img
-          src="BETVISA_LOGO_URL"
-          alt="BETVISA"
-          class="h-12 object-contain
-                 bg-white rounded-lg px-3 py-1">
+          src="https://heyvip.com/wp-content/uploads/2025/05/betvisa.png"
+          alt="Betvisa"
+          class="h-12 object-contain bg-white rounded-lg px-3 py-1">
 
         <div>
 
@@ -1515,18 +1269,10 @@
 
       <div class="p-5 space-y-4">
 
+        <div class="bg-violet-500/20 border border-violet-500/40 rounded-xl p-4 text-center">
 
-        <div
-          class="bg-violet-500/20
-                 border border-violet-500/40
-                 rounded-xl p-4 text-center">
-
-          <div
-            class="text-2xl font-bold
-                   text-violet-400">
-
+          <div class="text-2xl font-bold text-violet-400">
             উচ্চ কমিশন
-
           </div>
 
           <div class="text-sm text-slate-300">
@@ -1536,65 +1282,37 @@
         </div>
 
 
-        <div
-          class="bg-violet-500/10
-                 border border-violet-500/30
-                 rounded-xl p-3">
+        <div class="bg-violet-500/10 border border-violet-500/30 rounded-xl p-3">
 
-          <p
-            class="text-sm font-medium
-                   text-violet-400">
-
+          <p class="text-sm font-medium text-violet-400">
             🎁 অতিরিক্ত সুবিধা
-
           </p>
 
-          <p
-            class="text-xs text-slate-300 mt-1">
-
-            সহজ শুরু ও দ্রুত সাপোর্ট
-
+          <p class="text-xs text-slate-300 mt-1">
+            নতুন ও দ্রুত বর্ধনশীল প্ল্যাটফর্ম
           </p>
 
         </div>
 
 
-        <ul
-          class="space-y-1.5
-                 text-sm text-slate-300">
+        <ul class="space-y-1.5 text-sm text-slate-300">
 
-          <li>
-            ✓ সহজভাবে শুরু করুন
-          </li>
-
-          <li>
-            ✓ দ্রুত সাপোর্ট
-          </li>
-
-          <li>
-            ✓ দীর্ঘমেয়াদি আয়ের সুযোগ
-          </li>
+          <li>✓ সহজভাবে শুরু করুন</li>
+          <li>✓ দ্রুত সাপোর্ট</li>
+          <li>✓ লাইফটাইম আয়ের সুযোগ</li>
 
         </ul>
 
 
-        <a
-          href="BETVISA_SIGNUP_URL"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block w-full
-                 bg-gradient-to-r
-                 from-violet-500 to-purple-500
-                 hover:from-violet-400
-                 hover:to-purple-400
-                 text-white font-bold
-                 text-center py-3
-                 rounded-xl transition">
+        <button
+          onclick="openModal('signupModal')"
+          class="block w-full bg-gradient-to-r from-violet-500 to-purple-500
+                 hover:from-violet-400 hover:to-purple-400
+                 text-white font-bold text-center py-3 rounded-xl transition">
 
           সাইন আপ করুন
 
-        </a>
-
+        </button>
 
       </div>
 
@@ -1602,26 +1320,16 @@
 
 
 
-    <!-- =====================================================
-         JEETWAY
-    ===================================================== -->
+    <!-- 5 JEETWAY -->
 
-    <div
-      class="card bg-slate-900/90
-             border border-rose-500/40
-             rounded-2xl overflow-hidden">
+    <div class="card bg-slate-900/90 border border-rose-500/40 rounded-2xl overflow-hidden">
 
-
-      <div
-        class="bg-gradient-to-r
-               from-rose-600 to-pink-600
-               p-5 flex items-center gap-4">
+      <div class="bg-gradient-to-r from-rose-600 to-pink-600 p-5 flex items-center gap-4">
 
         <img
-          src="JEETWAY_LOGO_URL"
-          alt="JEETWAY"
-          class="h-12 object-contain
-                 bg-white rounded-lg px-3 py-1">
+          src="https://heyvip.com/wp-content/uploads/2025/05/jeetway.png"
+          alt="Jeetway"
+          class="h-12 object-contain bg-white rounded-lg px-3 py-1">
 
         <div>
 
@@ -1640,18 +1348,10 @@
 
       <div class="p-5 space-y-4">
 
+        <div class="bg-rose-500/20 border border-rose-500/40 rounded-xl p-4 text-center">
 
-        <div
-          class="bg-rose-500/20
-                 border border-rose-500/40
-                 rounded-xl p-4 text-center">
-
-          <div
-            class="text-3xl font-bold
-                   text-rose-400">
-
+          <div class="text-3xl font-bold text-rose-400">
             ৫০%
-
           </div>
 
           <div class="text-sm text-slate-300">
@@ -1661,65 +1361,37 @@
         </div>
 
 
-        <div
-          class="bg-rose-500/10
-                 border border-rose-500/30
-                 rounded-xl p-3">
+        <div class="bg-rose-500/10 border border-rose-500/30 rounded-xl p-3">
 
-          <p
-            class="text-sm font-medium
-                   text-rose-400">
-
+          <p class="text-sm font-medium text-rose-400">
             🎁 অতিরিক্ত ক্যাশ বোনাস
-
           </p>
 
-          <p
-            class="text-xs text-slate-300 mt-1">
-
-            পারফরম্যান্স অনুযায়ী অতিরিক্ত বোনাস
-
+          <p class="text-xs text-slate-300 mt-1">
+            মাসিক ডিপোজিট টার্গেট অনুযায়ী অতিরিক্ত ক্যাশ বোনাস
           </p>
 
         </div>
 
 
-        <ul
-          class="space-y-1.5
-                 text-sm text-slate-300">
+        <ul class="space-y-1.5 text-sm text-slate-300">
 
-          <li>
-            ✓ জনপ্রিয় প্রোগ্রাম
-          </li>
-
-          <li>
-            ✓ অতিরিক্ত বোনাস সিস্টেম
-          </li>
-
-          <li>
-            ✓ সহজ লিংক শেয়ার
-          </li>
+          <li>✓ বাংলাদেশের জনপ্রিয় প্রোগ্রাম</li>
+          <li>✓ অতিরিক্ত ক্যাশ বোনাস সিস্টেম</li>
+          <li>✓ সহজ লিংক শেয়ার করে আয়</li>
 
         </ul>
 
 
-        <a
-          href="JEETWAY_SIGNUP_URL"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block w-full
-                 bg-gradient-to-r
-                 from-rose-500 to-pink-500
-                 hover:from-rose-400
-                 hover:to-pink-400
-                 text-white font-bold
-                 text-center py-3
-                 rounded-xl transition">
+        <button
+          onclick="openModal('signupModal')"
+          class="block w-full bg-gradient-to-r from-rose-500 to-pink-500
+                 hover:from-rose-400 hover:to-pink-400
+                 text-white font-bold text-center py-3 rounded-xl transition">
 
           সাইন আপ করুন
 
-        </a>
-
+        </button>
 
       </div>
 
@@ -1727,26 +1399,16 @@
 
 
 
-    <!-- =====================================================
-         BETJDB
-    ===================================================== -->
+    <!-- 6 BETJDB -->
 
-    <div
-      class="card bg-slate-900/90
-             border border-orange-500/40
-             rounded-2xl overflow-hidden">
+    <div class="card bg-slate-900/90 border border-orange-500/40 rounded-2xl overflow-hidden">
 
-
-      <div
-        class="bg-gradient-to-r
-               from-orange-600 to-red-600
-               p-5 flex items-center gap-4">
+      <div class="bg-gradient-to-r from-orange-600 to-red-600 p-5 flex items-center gap-4">
 
         <img
-          src="BETJDB_LOGO_URL"
-          alt="BETJDB"
-          class="h-12 object-contain
-                 bg-white rounded-lg px-3 py-1">
+          src="https://heyvip.com/wp-content/uploads/2025/05/betjdb.png"
+          alt="BetJDB"
+          class="h-12 object-contain bg-white rounded-lg px-3 py-1">
 
         <div>
 
@@ -1765,18 +1427,10 @@
 
       <div class="p-5 space-y-4">
 
+        <div class="bg-orange-500/20 border border-orange-500/40 rounded-xl p-4 text-center">
 
-        <div
-          class="bg-orange-500/20
-                 border border-orange-500/40
-                 rounded-xl p-4 text-center">
-
-          <div
-            class="text-3xl font-bold
-                   text-orange-400">
-
+          <div class="text-3xl font-bold text-orange-400">
             ৪৫%
-
           </div>
 
           <div class="text-sm text-slate-300">
@@ -1786,65 +1440,37 @@
         </div>
 
 
-        <div
-          class="bg-orange-500/10
-                 border border-orange-500/30
-                 rounded-xl p-3">
+        <div class="bg-orange-500/10 border border-orange-500/30 rounded-xl p-3">
 
-          <p
-            class="text-sm font-medium
-                   text-orange-400">
-
+          <p class="text-sm font-medium text-orange-400">
             🎁 অতিরিক্ত ক্যাশ বোনাস
-
           </p>
 
-          <p
-            class="text-xs text-slate-300 mt-1">
-
-            সক্রিয় পারফরম্যান্স অনুযায়ী বোনাস
-
+          <p class="text-xs text-slate-300 mt-1">
+            সক্রিয় প্লেয়ার সংখ্যা অনুযায়ী সাপ্তাহিক বোনাস
           </p>
 
         </div>
 
 
-        <ul
-          class="space-y-1.5
-                 text-sm text-slate-300">
+        <ul class="space-y-1.5 text-sm text-slate-300">
 
-          <li>
-            ✓ সাপ্তাহিক কমিশন
-          </li>
-
-          <li>
-            ✓ দ্রুত পেমেন্ট • স্বচ্ছ রিপোর্ট
-          </li>
-
-          <li>
-            ✓ লাইফটাইম কমিশন
-          </li>
+          <li>✓ শুধুমাত্র সাপ্তাহিক কমিশন</li>
+          <li>✓ দ্রুত পেমেন্ট • স্বচ্ছ রিপোর্ট</li>
+          <li>✓ লাইফটাইম কমিশন</li>
 
         </ul>
 
 
-        <a
-          href="BETJDB_SIGNUP_URL"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block w-full
-                 bg-gradient-to-r
-                 from-orange-500 to-red-500
-                 hover:from-orange-400
-                 hover:to-red-400
-                 text-white font-bold
-                 text-center py-3
-                 rounded-xl transition">
+        <button
+          onclick="openModal('signupModal')"
+          class="block w-full bg-gradient-to-r from-orange-500 to-red-500
+                 hover:from-orange-400 hover:to-red-400
+                 text-white font-bold text-center py-3 rounded-xl transition">
 
           সাইন আপ করুন
 
-        </a>
-
+        </button>
 
       </div>
 
@@ -1852,28 +1478,16 @@
 
 
 
-    <!-- =====================================================
-         SBJ66
-    ===================================================== -->
+    <!-- 7 SBJ66 -->
 
-    <div
-      class="card bg-slate-900/90
-             border border-cyan-500/40
-             rounded-2xl overflow-hidden
-             md:col-span-2
-             xl:col-span-1">
+    <div class="card bg-slate-900/90 border border-cyan-500/40 rounded-2xl overflow-hidden md:col-span-2 xl:col-span-1">
 
-
-      <div
-        class="bg-gradient-to-r
-               from-cyan-600 to-blue-600
-               p-5 flex items-center gap-4">
+      <div class="bg-gradient-to-r from-cyan-600 to-blue-600 p-5 flex items-center gap-4">
 
         <img
-          src="SBJ66_LOGO_URL"
+          src="https://heyvip.com/wp-content/uploads/2026/01/SJB66.png"
           alt="SBJ66"
-          class="h-12 object-contain
-                 bg-white rounded-lg px-3 py-1">
+          class="h-12 object-contain bg-white rounded-lg px-3 py-1">
 
         <div>
 
@@ -1892,18 +1506,10 @@
 
       <div class="p-5 space-y-4">
 
+        <div class="bg-cyan-500/20 border border-cyan-500/40 rounded-xl p-4 text-center">
 
-        <div
-          class="bg-cyan-500/20
-                 border border-cyan-500/40
-                 rounded-xl p-4 text-center">
-
-          <div
-            class="text-2xl font-bold
-                   text-cyan-400">
-
+          <div class="text-2xl font-bold text-cyan-400">
             প্রতিযোগিতামূলক কমিশন
-
           </div>
 
           <div class="text-sm text-slate-300">
@@ -1913,65 +1519,37 @@
         </div>
 
 
-        <div
-          class="bg-cyan-500/10
-                 border border-cyan-500/30
-                 rounded-xl p-3">
+        <div class="bg-cyan-500/10 border border-cyan-500/30 rounded-xl p-3">
 
-          <p
-            class="text-sm font-medium
-                   text-cyan-400">
-
+          <p class="text-sm font-medium text-cyan-400">
             🎁 অতিরিক্ত সুবিধা
-
           </p>
 
-          <p
-            class="text-xs text-slate-300 mt-1">
-
-            একাধিক প্ল্যাটফর্ম সাপোর্ট
-
+          <p class="text-xs text-slate-300 mt-1">
+            একাধিক প্ল্যাটফর্ম সাপোর্ট + স্থিতিশীল পেমেন্ট
           </p>
 
         </div>
 
 
-        <ul
-          class="space-y-1.5
-                 text-sm text-slate-300">
+        <ul class="space-y-1.5 text-sm text-slate-300">
 
-          <li>
-            ✓ মাসিক কমিশন স্ট্রাকচার
-          </li>
-
-          <li>
-            ✓ স্বচ্ছ কমিশন বন্টন
-          </li>
-
-          <li>
-            ✓ স্থিতিশীল পেমেন্ট সিস্টেম
-          </li>
+          <li>✓ মাসিক কমিশন স্ট্রাকচার</li>
+          <li>✓ স্বচ্ছ কমিশন বন্টন</li>
+          <li>✓ স্থিতিশীল পেমেন্ট সিস্টেম</li>
 
         </ul>
 
 
-        <a
-          href="SBJ66_SIGNUP_URL"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block w-full
-                 bg-gradient-to-r
-                 from-cyan-500 to-blue-500
-                 hover:from-cyan-400
-                 hover:to-blue-400
-                 text-white font-bold
-                 text-center py-3
-                 rounded-xl transition">
+        <button
+          onclick="openModal('signupModal')"
+          class="block w-full bg-gradient-to-r from-cyan-500 to-blue-500
+                 hover:from-cyan-400 hover:to-blue-400
+                 text-white font-bold text-center py-3 rounded-xl transition">
 
           সাইন আপ করুন
 
-        </a>
-
+        </button>
 
       </div>
 
@@ -1984,30 +1562,21 @@
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      BENEFITS
-========================================================= -->
+===================================================== -->
 
 <section class="max-w-6xl mx-auto px-4 pb-16">
 
-  <h2
-    class="text-2xl md:text-3xl
-           font-bold text-center mb-8">
-
+  <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">
     সব প্রোগ্রামেই যে সুবিধাগুলো পাবেন
-
   </h2>
 
 
-  <div
-    class="grid sm:grid-cols-2
-           lg:grid-cols-3 gap-5">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
 
-    <div
-      class="bg-white/5
-             border border-white/10
-             rounded-2xl p-6 text-center">
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
 
       <div class="text-4xl mb-3">
         🆓
@@ -2024,10 +1593,7 @@
     </div>
 
 
-    <div
-      class="bg-white/5
-             border border-white/10
-             rounded-2xl p-6 text-center">
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
 
       <div class="text-4xl mb-3">
         💰
@@ -2044,10 +1610,7 @@
     </div>
 
 
-    <div
-      class="bg-white/5
-             border border-white/10
-             rounded-2xl p-6 text-center">
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
 
       <div class="text-4xl mb-3">
         ⚡
@@ -2064,10 +1627,7 @@
     </div>
 
 
-    <div
-      class="bg-white/5
-             border border-white/10
-             rounded-2xl p-6 text-center">
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
 
       <div class="text-4xl mb-3">
         📈
@@ -2078,16 +1638,13 @@
       </h3>
 
       <p class="text-slate-400 text-sm">
-        দীর্ঘমেয়াদি কমিশনের সুযোগ
+        একবার রেফার করলে দীর্ঘমেয়াদি আয়
       </p>
 
     </div>
 
 
-    <div
-      class="bg-white/5
-             border border-white/10
-             rounded-2xl p-6 text-center">
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
 
       <div class="text-4xl mb-3">
         🎁
@@ -2104,10 +1661,7 @@
     </div>
 
 
-    <div
-      class="bg-white/5
-             border border-white/10
-             rounded-2xl p-6 text-center">
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
 
       <div class="text-4xl mb-3">
         📊
@@ -2118,7 +1672,7 @@
       </h3>
 
       <p class="text-slate-400 text-sm">
-        ডেটা ও পারফরম্যান্স দেখুন
+        রিয়েল-টাইম ডেটা অ্যাক্সেস
       </p>
 
     </div>
@@ -2130,39 +1684,28 @@
 
 
 
-<!-- =========================================================
-     SOCIAL SUPPORT
-========================================================= -->
+<!-- =====================================================
+     SOCIAL / SUPPORT
+===================================================== -->
 
-<section
-  class="border-t border-white/10
-         bg-black/40 py-12">
+<section class="border-t border-white/10 bg-black/40 py-12">
 
-
-  <div
-    class="max-w-4xl mx-auto
-           px-4 text-center">
-
+  <div class="max-w-4xl mx-auto px-4 text-center">
 
     <h3 class="text-xl font-bold mb-6">
       সাপোর্ট ও সামাজিক যোগাযোগ
     </h3>
 
 
-    <div
-      class="flex flex-wrap
-             justify-center gap-4">
+    <div class="flex flex-wrap justify-center gap-4">
 
 
       <a
-        href="FACEBOOK_URL"
+        href="https://www.facebook.com/profile.php?id=61593240359036"
         target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-2
-               bg-[#1877F2]
+        class="flex items-center gap-2 bg-[#1877F2]
                hover:bg-[#166fe5]
-               px-6 py-3 rounded-xl
-               font-medium transition">
+               px-6 py-3 rounded-xl font-medium transition">
 
         <i class="fa-brands fa-facebook text-xl"></i>
 
@@ -2172,14 +1715,11 @@
 
 
       <a
-        href="TELEGRAM_CHANNEL_URL"
+        href="https://t.me/AffSupportAgent"
         target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-2
-               bg-[#0088cc]
+        class="flex items-center gap-2 bg-[#0088cc]
                hover:bg-[#0077b5]
-               px-6 py-3 rounded-xl
-               font-medium transition">
+               px-6 py-3 rounded-xl font-medium transition">
 
         <i class="fa-brands fa-telegram text-xl"></i>
 
@@ -2189,14 +1729,11 @@
 
 
       <a
-        href="YOUTUBE_URL"
+        href="https://www.youtube.com/@HVPartner"
         target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-2
-               bg-[#FF0000]
+        class="flex items-center gap-2 bg-[#FF0000]
                hover:bg-[#e60000]
-               px-6 py-3 rounded-xl
-               font-medium transition">
+               px-6 py-3 rounded-xl font-medium transition">
 
         <i class="fa-brands fa-youtube text-xl"></i>
 
@@ -2213,14 +1750,11 @@
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      FOOTER
-========================================================= -->
+===================================================== -->
 
-<footer
-  class="py-6 text-center
-         text-slate-500 text-sm
-         border-t border-white/5">
+<footer class="py-6 text-center text-slate-500 text-sm border-t border-white/5">
 
   <p>
     © ২০২৬ HeyVIP Partners • সব তথ্য তুলনামূলক উদ্দেশ্যে দেওয়া হয়েছে
@@ -2230,78 +1764,72 @@
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      JAVASCRIPT
-========================================================= -->
+===================================================== -->
 
 <script>
 
-  /* =========================
-     OPEN MODAL
-  ========================= */
+  /* Open Modal */
 
-  function openModal(id) {
+  function openModal(modalId) {
 
-    const modal = document.getElementById(id);
+    const modal = document.getElementById(modalId);
 
-    if (!modal) return;
+    if (modal) {
 
-    modal.classList.add('active');
+      modal.classList.add('active');
 
-    document.body.style.overflow = 'hidden';
-
-  }
-
-
-  /* =========================
-     CLOSE MODAL
-  ========================= */
-
-  function closeModal(id) {
-
-    const modal = document.getElementById(id);
-
-    if (!modal) return;
-
-    modal.classList.remove('active');
-
-    document.body.style.overflow = '';
-
-  }
-
-
-  /* =========================
-     CLOSE OUTSIDE
-  ========================= */
-
-  function closeOutside(event, id) {
-
-    if (event.target.id === id) {
-
-      closeModal(id);
+      document.body.style.overflow = 'hidden';
 
     }
 
   }
 
 
-  /* =========================
-     ESC KEY
-  ========================= */
+  /* Close Modal */
 
-  document.addEventListener(
-    'keydown',
-    function(event) {
+  function closeModal(modalId) {
 
-      if (event.key === 'Escape') {
+    const modal = document.getElementById(modalId);
 
-        closeModal('signupModal');
-        closeModal('loginModal');
+    if (modal) {
 
-      }
+      modal.classList.remove('active');
+
+      document.body.style.overflow = '';
 
     }
-  );
+
+  }
+
+
+  /* Close when clicking outside */
+
+  function closeModalOutside(event, modalId) {
+
+    if (event.target.id === modalId) {
+
+      closeModal(modalId);
+
+    }
+
+  }
+
+
+  /* ESC Button */
+
+  document.addEventListener('keydown', function(event) {
+
+    if (event.key === 'Escape') {
+
+      closeModal('signupModal');
+
+      closeModal('loginModal');
+
+    }
+
+  });
 
 
 </script>
