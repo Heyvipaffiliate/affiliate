@@ -3,16 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HeyVIP Partners | Best Casino Affiliates Bangladesh 2026</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-    body { font-family: 'Hind Siliguri', sans-serif; }
-    .card { transition: all 0.3s ease; }
-    .card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
 
-    /* Video Background - Full cover, no black bars */
+  <title>HeyVIP Partners | বাংলাদেশের সেরা অ্যাফিলিয়েট প্রোগ্রাম</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background: #020617;
+    }
+
+    .card {
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    }
+
+    /* =========================
+       VIDEO BACKGROUND
+    ========================= */
+
     .video-container {
       position: absolute;
       top: 0;
@@ -23,6 +47,7 @@
       z-index: 0;
       background: #000;
     }
+
     .video-bg {
       position: absolute;
       top: 50%;
@@ -34,374 +59,1781 @@
       transform: translate(-50%, -50%);
       object-fit: cover;
     }
+
     .video-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.70), rgba(0,0,0,0.55), rgba(0,0,0,0.78));
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.72),
+          rgba(0,0,0,0.52),
+          rgba(0,0,0,0.82)
+        );
       z-index: 1;
     }
 
-    /* Floating Telegram Button */
-    .telegram-float {
+    /* =========================
+       TELEGRAM FLOAT
+    ========================= */
+
+    .telegram-support {
       position: fixed;
-      bottom: 30px;
-      right: 25px;
+      bottom: 24px;
+      right: 20px;
       z-index: 9999;
-      width: 60px;
-      height: 60px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .telegram-support a {
+      width: 58px;
+      height: 58px;
+
       background: #0088cc;
       border-radius: 50%;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 25px rgba(0,136,204,0.5);
+
+      color: white;
+      font-size: 30px;
+
+      text-decoration: none;
+
+      box-shadow:
+        0 8px 25px rgba(0,136,204,0.55);
+
       transition: all 0.3s ease;
-      animation: pulse 2s infinite;
+
+      animation: telegramPulse 2s infinite;
     }
-    .telegram-float:hover {
+
+    .telegram-support a:hover {
       transform: scale(1.1);
       background: #0077b5;
     }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(0,136,204,0.6); }
-      70% { box-shadow: 0 0 0 15px rgba(0,136,204,0); }
-      100% { box-shadow: 0 0 0 0 rgba(0,136,204,0); }
+
+    .telegram-support span {
+      background: rgba(0,0,0,0.85);
+      color: #fff;
+
+      font-size: 11px;
+      font-weight: 600;
+
+      padding: 3px 8px;
+      border-radius: 6px;
+
+      white-space: nowrap;
+
+      border: 1px solid rgba(255,255,255,0.12);
     }
+
+    @keyframes telegramPulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(0,136,204,0.6);
+      }
+
+      70% {
+        box-shadow: 0 0 0 14px rgba(0,136,204,0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(0,136,204,0);
+      }
+    }
+
+    /* =========================
+       MODAL
+    ========================= */
+
+    .modal {
+      display: none;
+
+      position: fixed;
+      inset: 0;
+
+      z-index: 10000;
+
+      background: rgba(0,0,0,0.78);
+
+      backdrop-filter: blur(8px);
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 520px;
+
+      max-height: 90vh;
+      overflow-y: auto;
+
+      background:
+        linear-gradient(
+          145deg,
+          #0f172a,
+          #020617
+        );
+
+      border: 1px solid rgba(245,158,11,0.35);
+
+      border-radius: 24px;
+
+      padding: 24px;
+
+      box-shadow:
+        0 30px 80px rgba(0,0,0,0.7);
+
+      animation: modalShow 0.25s ease;
+    }
+
+    @keyframes modalShow {
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .modal-site {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      width: 100%;
+
+      padding: 15px 17px;
+
+      margin-bottom: 10px;
+
+      border-radius: 14px;
+
+      background: rgba(255,255,255,0.05);
+
+      border: 1px solid rgba(255,255,255,0.10);
+
+      color: white;
+
+      text-decoration: none;
+
+      transition: all 0.25s ease;
+    }
+
+    .modal-site:hover {
+      transform: translateX(5px);
+
+      background: rgba(245,158,11,0.12);
+
+      border-color: rgba(245,158,11,0.55);
+    }
+
+    .modal-site-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .site-number {
+      width: 34px;
+      height: 34px;
+
+      border-radius: 10px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: linear-gradient(
+        135deg,
+        #f59e0b,
+        #ea580c
+      );
+
+      color: #000;
+
+      font-weight: 700;
+    }
+
+    .site-arrow {
+      color: #fbbf24;
+      font-size: 18px;
+    }
+
+    .close-btn {
+      width: 38px;
+      height: 38px;
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(255,255,255,0.08);
+
+      color: #fff;
+
+      border: 1px solid rgba(255,255,255,0.1);
+
+      cursor: pointer;
+
+      transition: all 0.2s ease;
+    }
+
+    .close-btn:hover {
+      background: rgba(239,68,68,0.8);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 640px) {
+
+      .telegram-support {
+        right: 14px;
+        bottom: 16px;
+      }
+
+      .telegram-support a {
+        width: 52px;
+        height: 52px;
+        font-size: 26px;
+      }
+
+      .modal {
+        padding: 12px;
+      }
+
+      .modal-box {
+        padding: 18px;
+        border-radius: 20px;
+      }
+
+    }
+
   </style>
 </head>
+
+
 <body class="bg-slate-950 text-white">
 
-  <!-- Floating Telegram Support Button -->
-  <a href="https://t.me/heyvipBD" target="_blank" class="telegram-float" title="Telegram Support">
-    <i class="fa-brands fa-telegram text-white text-3xl"></i>
+
+<!-- =====================================================
+     TELEGRAM FLOATING SUPPORT
+===================================================== -->
+
+<div class="telegram-support">
+
+  <a href="https://t.me/heyvipBD"
+     target="_blank"
+     title="টেলিগ্রাম সাপোর্ট">
+
+    <i class="fa-brands fa-telegram"></i>
+
   </a>
 
-  <!-- Header -->
-  <header class="bg-black/85 backdrop-blur-md border-b border-amber-500/20 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <!-- New HeyVIP Logo -->
-        <img src="heyvip-logo.png" alt="HeyVIP" class="h-11 md:h-12 object-contain">
+  <span>টেলিগ্রাম সাপোর্ট</span>
+
+</div>
+
+
+<!-- =====================================================
+     SIGN UP MODAL
+===================================================== -->
+
+<div id="signupModal"
+     class="modal"
+     onclick="closeModalOutside(event, 'signupModal')">
+
+  <div class="modal-box">
+
+    <div class="flex items-center justify-between mb-2">
+
+      <div>
+        <h2 class="text-2xl font-bold">
+          সাইন আপ করুন
+        </h2>
+
+        <p class="text-slate-400 text-sm mt-1">
+          আপনার পছন্দের প্ল্যাটফর্ম নির্বাচন করুন
+        </p>
       </div>
-      <div class="hidden md:flex gap-5 text-sm font-medium items-center">
-        <a href="https://www.facebook.com/profile.php?id=61593240359036" target="_blank" class="hover:text-blue-400 transition flex items-center gap-1.5">
-          <i class="fa-brands fa-facebook text-lg"></i> Facebook
-        </a>
-        <a href="https://t.me/heyvipBD" target="_blank" class="hover:text-sky-400 transition flex items-center gap-1.5">
-          <i class="fa-brands fa-telegram text-lg"></i> Telegram
-        </a>
-        <a href="https://www.youtube.com/@HVPartner" target="_blank" class="hover:text-red-400 transition flex items-center gap-1.5">
-          <i class="fa-brands fa-youtube text-lg"></i> YouTube
-        </a>
+
+      <button class="close-btn"
+              onclick="closeModal('signupModal')">
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+    </div>
+
+
+    <div class="mt-5">
+
+
+      <!-- BETJILI -->
+
+      <a href="https://betjili11.vip/saf/690u8aoF"
+         target="_blank"
+         class="modal-site">
+
+        <div class="modal-site-left">
+
+          <div class="site-number">
+            ১
+          </div>
+
+          <div>
+            <div class="font-bold">
+              BETJILI
+            </div>
+
+            <div class="text-xs text-slate-400">
+              ৫০% পর্যন্ত কমিশন
+            </div>
+          </div>
+
+        </div>
+
+        <i class="fa-solid fa-arrow-right site-arrow"></i>
+
+      </a>
+
+
+      <!-- MOSTPLAY -->
+
+      <a href="https://mostplayipl.club/saf/Q4r0A44m"
+         target="_blank"
+         class="modal-site">
+
+        <div class="modal-site-left">
+
+          <div class="site-number">
+            ২
+          </div>
+
+          <div>
+            <div class="font-bold">
+              MOSTPLAY
+            </div>
+
+            <div class="text-xs text-slate-400">
+              ৫০% নেট প্রফিট
+            </div>
+          </div>
+
+        </div>
+
+        <i class="fa-solid fa-arrow-right site-arrow"></i>
+
+      </a>
+
+
+      <!-- DARAZPLAY -->
+
+      <a href="https://darazplay.online/saf/kXvM9k6i"
+         target="_blank"
+         class="modal-site">
+
+        <div class="modal-site-left">
+
+          <div class="site-number">
+            ৩
+          </div>
+
+          <div>
+            <div class="font-bold">
+              DARAZPLAY
+            </div>
+
+            <div class="text-xs text-slate-400">
+              ৬০% পর্যন্ত কমিশন
+            </div>
+          </div>
+
+        </div>
+
+        <i class="fa-solid fa-arrow-right site-arrow"></i>
+
+      </a>
+
+
+      <!-- BETVISA -->
+
+      <a href="https://betvisafun.com/saf/WWa7uoma"
+         target="_blank"
+         class="modal-site">
+
+        <div class="modal-site-left">
+
+          <div class="site-number">
+            ৪
+          </div>
+
+          <div>
+            <div class="font-bold">
+              BETVISA
+            </div>
+
+            <div class="text-xs text-slate-400">
+              উচ্চ কমিশন প্রোগ্রাম
+            </div>
+          </div>
+
+        </div>
+
+        <i class="fa-solid fa-arrow-right site-arrow"></i>
+
+      </a>
+
+
+      <!-- JEETWAY -->
+
+      <a href="https://jeetwayaffiliate.com/saf/Th21lHTe"
+         target="_blank"
+         class="modal-site">
+
+        <div class="modal-site-left">
+
+          <div class="site-number">
+            ৫
+          </div>
+
+          <div>
+            <div class="font-bold">
+              JEETWAY
+            </div>
+
+            <div class="text-xs text-slate-400">
+              ৫০% মাসিক কমিশন
+            </div>
+          </div>
+
+        </div>
+
+        <i class="fa-solid fa-arrow-right site-arrow"></i>
+
+      </a>
+
+
+      <!-- BETJDB -->
+
+      <a href="https://betjdb.net/saf/b81lQ4Yw"
+         target="_blank"
+         class="modal-site">
+
+        <div class="modal-site-left">
+
+          <div class="site-number">
+            ৬
+          </div>
+
+          <div>
+            <div class="font-bold">
+              BETJDB
+            </div>
+
+            <div class="text-xs text-slate-400">
+              ৪৫% পর্যন্ত কমিশন
+            </div>
+          </div>
+
+        </div>
+
+        <i class="fa-solid fa-arrow-right site-arrow"></i>
+
+      </a>
+
+
+      <!-- SBJ66 -->
+
+      <a href="http://sbj66.fun/saf/d4Ll9WT2"
+         target="_blank"
+         class="modal-site">
+
+        <div class="modal-site-left">
+
+          <div class="site-number">
+            ৭
+          </div>
+
+          <div>
+            <div class="font-bold">
+              SBJ66
+            </div>
+
+            <div class="text-xs text-slate-400">
+              মাসিক কমিশন
+            </div>
+          </div>
+
+        </div>
+
+        <i class="fa-solid fa-arrow-right site-arrow"></i>
+
+      </a>
+
+
+    </div>
+
+
+    <div class="mt-4 text-center text-xs text-slate-500">
+      যেকোনো একটি প্ল্যাটফর্ম নির্বাচন করে সাইন আপ করুন
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     LOGIN MODAL
+===================================================== -->
+
+<div id="loginModal"
+     class="modal"
+     onclick="closeModalOutside(event, 'loginModal')">
+
+  <div class="modal-box">
+
+    <div class="flex items-center justify-between mb-2">
+
+      <div>
+
+        <h2 class="text-2xl font-bold">
+          লগ ইন করুন
+        </h2>
+
+        <p class="text-slate-400 text-sm mt-1">
+          যে প্ল্যাটফর্মে লগ ইন করতে চান সেটি নির্বাচন করুন
+        </p>
+
       </div>
-    </div>
-  </header>
 
-  <!-- Hero Section with Video -->
-  <section class="relative h-[420px] md:h-[520px] flex items-center justify-center overflow-hidden">
-    
-    <!-- Video Background (Full cover - no black bars) -->
-    <div class="video-container">
-      <video class="video-bg" autoplay muted loop playsinline preload="auto">
-        <!-- Local video (recommended for live site) -->
-        <source src="roulette-bg.mp4" type="video/mp4">
-        <!-- Google Drive fallback -->
-        <source src="https://drive.google.com/uc?export=download&id=1OBq2HF_1n9dUHcb-a6qNj9TfcLBpA8vD" type="video/mp4">
-      </video>
+      <button class="close-btn"
+              onclick="closeModal('loginModal')">
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
     </div>
 
-    <!-- Dark Overlay -->
-    <div class="video-overlay"></div>
 
-    <!-- Content -->
-    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-      <h2 class="text-3xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg">
-        বাংলাদেশের <span class="text-amber-400">সেরা অ্যাফিলিয়েট প্রোগ্রাম</span>
-      </h2>
-      <p class="text-slate-200 text-lg md:text-xl max-w-2xl mx-auto drop-shadow">
-        শূন্য বিনিয়োগে শুরু করুন • লাইফটাইম কমিশন • এক্সট্রা ক্যাশ বোনাস • দ্রুত পেমেন্ট
+    <div class="mt-5">
+
+
+      <!-- BETJILI LOGIN -->
+
+      <a href="https://betjili11.vip/saf/690u8aoF"
+         target="_blank"
+         class="modal-site">
+
+        <div class="modal-site-left">
+
+          <div class="site-number">
+            ১
+          </div>
+
+          <div class="font-bold">
+            BETJILI
+          </div>
+
+        </div>
+
+        <i class="fa-solid fa-arrow-right site-arrow"></i>
+
+      </a>
+
+
+      <!-- MOSTPLAY LOGIN -->
+
+      <a href="https://mostplayipl.club/saf/Q4r0A44m"
+         target="_blank"
+         class="modal-site">
+
+        <div class="modal-site-left">
+
+          <div class="site-number">
+            ২
+          </div>
+
+          <div class="font-bold">
+            MOSTPLAY
+          </div>
+
+        </div>
+
+        <i class="fa-solid fa-arrow-right site-arrow"></i>
+
+      </a>
+
+
+      <!-- DARAZPLAY LOGIN -->
+
+      <a href="https://darazplay.online/saf/kXvM9k6i"
+         target="_blank"
+         class="modal-site">
+
+        <div class="modal-site-left">
+
+          <div class="site-number">
+            ৩
+          </div>
+
+          <div class="font-bold">
+            DARAZPLAY
+          </div>
+
+        </div>
+
+        <i class="fa-solid fa-arrow-right site-arrow"></i>
+
+      </a>
+
+
+      <!-- BETVISA LOGIN -->
+
+      <a href="https://betvisafun.com/saf/WWa7uoma"
+         target="_blank"
+         class="modal-site">
+
+        <div class="modal-site-left">
+
+          <div class="site-number">
+            ৪
+          </div>
+
+          <div class="font-bold">
+            BETVISA
+          </div>
+
+        </div>
+
+        <i class="fa-solid fa-arrow-right site-arrow"></i>
+
+      </a>
+
+
+      <!-- JEETWAY LOGIN -->
+
+      <a href="https://jeetwayaffiliate.com/saf/Th21lHTe"
+         target="_blank"
+         class="modal-site">
+
+        <div class="modal-site-left">
+
+          <div class="site-number">
+            ৫
+          </div>
+
+          <div class="font-bold">
+            JEETWAY
+          </div>
+
+        </div>
+
+        <i class="fa-solid fa-arrow-right site-arrow"></i>
+
+      </a>
+
+
+      <!-- BETJDB LOGIN -->
+
+      <a href="https://betjdb.net/saf/b81lQ4Yw"
+         target="_blank"
+         class="modal-site">
+
+        <div class="modal-site-left">
+
+          <div class="site-number">
+            ৬
+          </div>
+
+          <div class="font-bold">
+            BETJDB
+          </div>
+
+        </div>
+
+        <i class="fa-solid fa-arrow-right site-arrow"></i>
+
+      </a>
+
+
+      <!-- SBJ66 LOGIN -->
+
+      <a href="http://sbj66.fun/saf/d4Ll9WT2"
+         target="_blank"
+         class="modal-site">
+
+        <div class="modal-site-left">
+
+          <div class="site-number">
+            ৭
+          </div>
+
+          <div class="font-bold">
+            SBJ66
+          </div>
+
+        </div>
+
+        <i class="fa-solid fa-arrow-right site-arrow"></i>
+
+      </a>
+
+
+    </div>
+
+
+    <div class="mt-4 text-center text-xs text-slate-500">
+      আপনার প্ল্যাটফর্ম নির্বাচন করে লগ ইন পেজে যান
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="bg-black/85 backdrop-blur-md border-b border-amber-500/20 sticky top-0 z-50">
+
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
+
+    <!-- LOGO -->
+
+    <div class="flex items-center">
+
+      <img src="heyvip-logo.png"
+           alt="HeyVIP"
+           class="h-11 md:h-12 object-contain">
+
+    </div>
+
+
+    <!-- BUTTONS -->
+
+    <div class="flex items-center gap-2 md:gap-3">
+
+
+      <button
+        onclick="openModal('signupModal')"
+        class="bg-gradient-to-r from-amber-500 to-orange-500
+               hover:from-amber-400 hover:to-orange-400
+               text-black font-bold
+               px-4 md:px-6 py-2 md:py-2.5
+               rounded-xl transition shadow-lg">
+
+        সাইন আপ
+
+      </button>
+
+
+      <button
+        onclick="openModal('loginModal')"
+        class="border border-amber-500/60
+               hover:bg-amber-500/10
+               text-amber-400 font-bold
+               px-4 md:px-6 py-2 md:py-2.5
+               rounded-xl transition">
+
+        লগ ইন
+
+      </button>
+
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="relative h-[420px] md:h-[520px] flex items-center justify-center overflow-hidden">
+
+
+  <!-- VIDEO -->
+
+  <div class="video-container">
+
+    <video
+      class="video-bg"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto">
+
+      <source src="roulette-bg.mp4" type="video/mp4">
+
+      <source
+        src="https://drive.google.com/uc?export=download&id=1OBq2HF_1n9dUHcb-a6qNj9TfcLBpA8vD"
+        type="video/mp4">
+
+    </video>
+
+  </div>
+
+
+  <!-- OVERLAY -->
+
+  <div class="video-overlay"></div>
+
+
+  <!-- HERO CONTENT -->
+
+  <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+
+    <h2 class="text-3xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg">
+
+      বাংলাদেশের
+
+      <span class="text-amber-400">
+        সেরা অ্যাফিলিয়েট প্রোগ্রাম
+      </span>
+
+    </h2>
+
+
+    <p class="text-slate-200 text-lg md:text-xl max-w-2xl mx-auto drop-shadow">
+
+      শূন্য বিনিয়োগে শুরু করুন • লাইফটাইম কমিশন •
+      অতিরিক্ত ক্যাশ বোনাস • দ্রুত পেমেন্ট
+
+    </p>
+
+
+    <div class="mt-7 flex flex-wrap justify-center gap-3">
+
+      <button
+        onclick="openModal('signupModal')"
+        class="bg-gradient-to-r from-amber-500 to-orange-500
+               hover:from-amber-400 hover:to-orange-400
+               text-black font-bold
+               px-7 py-3 rounded-xl transition shadow-xl">
+
+        এখনই সাইন আপ করুন
+
+      </button>
+
+
+      <button
+        onclick="openModal('loginModal')"
+        class="bg-white/10 hover:bg-white/20
+               border border-white/20
+               text-white font-bold
+               px-7 py-3 rounded-xl transition">
+
+        লগ ইন করুন
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROGRAMS
+===================================================== -->
+
+<section class="max-w-7xl mx-auto px-4 py-14">
+
+  <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+
+    <!-- 1 BETJILI -->
+
+    <div class="card bg-slate-900/90 border border-amber-500/40 rounded-2xl overflow-hidden">
+
+      <div class="bg-gradient-to-r from-amber-600 to-orange-600 p-5 flex items-center gap-4">
+
+        <img
+          src="https://heyvip.com/wp-content/uploads/2025/05/betjili-1.png"
+          alt="Betjili"
+          class="h-12 object-contain bg-white rounded-lg px-3 py-1">
+
+        <div>
+
+          <h3 class="text-xl font-bold">
+            BETJILI
+          </h3>
+
+          <p class="text-amber-100 text-sm">
+            ৫০% মাসিক / ৪৫% সাপ্তাহিক
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="p-5 space-y-4">
+
+        <div class="grid grid-cols-2 gap-3">
+
+          <div class="bg-amber-500/20 border border-amber-500/40 rounded-xl p-3 text-center">
+
+            <div class="text-2xl font-bold text-amber-400">
+              ৫০%
+            </div>
+
+            <div class="text-xs text-slate-300">
+              মাসিক কমিশন
+            </div>
+
+          </div>
+
+
+          <div class="bg-amber-500/20 border border-amber-500/40 rounded-xl p-3 text-center">
+
+            <div class="text-2xl font-bold text-amber-400">
+              ৪৫%
+            </div>
+
+            <div class="text-xs text-slate-300">
+              সাপ্তাহিক
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-3">
+
+          <p class="text-sm font-medium text-emerald-400">
+            🎁 অতিরিক্ত ক্যাশ বোনাস
+          </p>
+
+          <p class="text-xs text-slate-300 mt-1">
+            ডাউনলাইন পারফরম্যান্স অনুযায়ী অতিরিক্ত বোনাস
+          </p>
+
+        </div>
+
+
+        <ul class="space-y-1.5 text-sm text-slate-300">
+
+          <li>✓ ফ্রি রেজিস্ট্রেশন • কোনো বিনিয়োগ প্রয়োজন নেই</li>
+          <li>✓ দ্রুত পেমেন্ট • স্বচ্ছ রিপোর্ট</li>
+          <li>✓ লাইফটাইম রেভিনিউ শেয়ার</li>
+
+        </ul>
+
+
+        <button
+          onclick="openModal('signupModal')"
+          class="block w-full bg-gradient-to-r from-amber-500 to-orange-500
+                 hover:from-amber-400 hover:to-orange-400
+                 text-black font-bold text-center py-3 rounded-xl transition">
+
+          সাইন আপ করুন
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- 2 MOSTPLAY -->
+
+    <div class="card bg-slate-900/90 border border-blue-500/40 rounded-2xl overflow-hidden">
+
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-5 flex items-center gap-4">
+
+        <img
+          src="https://heyvip.com/wp-content/uploads/2025/05/mostplay-1.png"
+          alt="MostPlay"
+          class="h-12 object-contain bg-white rounded-lg px-3 py-1">
+
+        <div>
+
+          <h3 class="text-xl font-bold">
+            MOSTPLAY
+          </h3>
+
+          <p class="text-blue-100 text-sm">
+            ৫০% নেট প্রফিট
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="p-5 space-y-4">
+
+        <div class="bg-blue-500/20 border border-blue-500/40 rounded-xl p-4 text-center">
+
+          <div class="text-3xl font-bold text-blue-400">
+            ৫০%
+          </div>
+
+          <div class="text-sm text-slate-300">
+            নেট প্রফিটের অংশীদারিত্ব
+          </div>
+
+        </div>
+
+
+        <div class="grid grid-cols-2 gap-2 text-xs">
+
+          <div class="bg-slate-800 rounded-lg p-2 text-center">
+            ক্রিকেট এক্সচেঞ্জ
+          </div>
+
+          <div class="bg-slate-800 rounded-lg p-2 text-center">
+            লাইভ ক্যাসিনো
+          </div>
+
+          <div class="bg-slate-800 rounded-lg p-2 text-center">
+            টেবিল গেমস
+          </div>
+
+          <div class="bg-slate-800 rounded-lg p-2 text-center">
+            ফিশিং গেমস
+          </div>
+
+        </div>
+
+
+        <div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-3">
+
+          <p class="text-sm font-medium text-blue-400">
+            🎁 অতিরিক্ত সুবিধা
+          </p>
+
+          <p class="text-xs text-slate-300 mt-1">
+            ফ্রি রেজিস্ট্রেশন + কোনো বিনিয়োগ প্রয়োজন নেই + দ্রুত পেমেন্ট
+          </p>
+
+        </div>
+
+
+        <button
+          onclick="openModal('signupModal')"
+          class="block w-full bg-gradient-to-r from-blue-500 to-indigo-500
+                 hover:from-blue-400 hover:to-indigo-400
+                 text-white font-bold text-center py-3 rounded-xl transition">
+
+          সাইন আপ করুন
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- 3 DARAZPLAY -->
+
+    <div class="card bg-slate-900/90 border border-emerald-500/40 rounded-2xl overflow-hidden">
+
+      <div class="bg-gradient-to-r from-emerald-600 to-teal-600 p-5 flex items-center gap-4">
+
+        <img
+          src="https://heyvip.com/wp-content/uploads/2025/05/darazplay.png"
+          alt="DarazPlay"
+          class="h-12 object-contain bg-white rounded-lg px-3 py-1">
+
+        <div>
+
+          <h3 class="text-xl font-bold">
+            DARAZPLAY
+          </h3>
+
+          <p class="text-emerald-100 text-sm">
+            ৬০% পর্যন্ত মাসিক
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="p-5 space-y-4">
+
+        <div class="bg-emerald-500/20 border border-emerald-500/40 rounded-xl p-4 text-center">
+
+          <div class="text-3xl font-bold text-emerald-400">
+            ৬০%
+          </div>
+
+          <div class="text-sm text-slate-300">
+            সর্বোচ্চ মাসিক লাইফটাইম কমিশন
+          </div>
+
+        </div>
+
+
+        <div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-3">
+
+          <p class="text-sm font-medium text-emerald-400">
+            🎁 অতিরিক্ত ক্যাশ বোনাস
+          </p>
+
+          <p class="text-xs text-slate-300 mt-1">
+            উচ্চ পারফরম্যান্সে অতিরিক্ত ক্যাশ বোনাস
+          </p>
+
+        </div>
+
+
+        <ul class="space-y-1.5 text-sm text-slate-300">
+
+          <li>✓ বাংলাদেশি প্রিমিয়াম গেমিং অ্যাপ</li>
+          <li>✓ লাইফটাইম কমিশন</li>
+          <li>✓ উচ্চ পেআউট রেট</li>
+
+        </ul>
+
+
+        <button
+          onclick="openModal('signupModal')"
+          class="block w-full bg-gradient-to-r from-emerald-500 to-teal-500
+                 hover:from-emerald-400 hover:to-teal-400
+                 text-black font-bold text-center py-3 rounded-xl transition">
+
+          সাইন আপ করুন
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- 4 BETVISA -->
+
+    <div class="card bg-slate-900/90 border border-violet-500/40 rounded-2xl overflow-hidden">
+
+      <div class="bg-gradient-to-r from-violet-600 to-purple-600 p-5 flex items-center gap-4">
+
+        <img
+          src="https://heyvip.com/wp-content/uploads/2025/05/betvisa.png"
+          alt="Betvisa"
+          class="h-12 object-contain bg-white rounded-lg px-3 py-1">
+
+        <div>
+
+          <h3 class="text-xl font-bold">
+            BETVISA
+          </h3>
+
+          <p class="text-violet-100 text-sm">
+            উচ্চ কমিশন প্রোগ্রাম
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="p-5 space-y-4">
+
+        <div class="bg-violet-500/20 border border-violet-500/40 rounded-xl p-4 text-center">
+
+          <div class="text-2xl font-bold text-violet-400">
+            উচ্চ কমিশন
+          </div>
+
+          <div class="text-sm text-slate-300">
+            প্রতিযোগিতামূলক রেট
+          </div>
+
+        </div>
+
+
+        <div class="bg-violet-500/10 border border-violet-500/30 rounded-xl p-3">
+
+          <p class="text-sm font-medium text-violet-400">
+            🎁 অতিরিক্ত সুবিধা
+          </p>
+
+          <p class="text-xs text-slate-300 mt-1">
+            নতুন ও দ্রুত বর্ধনশীল প্ল্যাটফর্ম
+          </p>
+
+        </div>
+
+
+        <ul class="space-y-1.5 text-sm text-slate-300">
+
+          <li>✓ সহজভাবে শুরু করুন</li>
+          <li>✓ দ্রুত সাপোর্ট</li>
+          <li>✓ লাইফটাইম আয়ের সুযোগ</li>
+
+        </ul>
+
+
+        <button
+          onclick="openModal('signupModal')"
+          class="block w-full bg-gradient-to-r from-violet-500 to-purple-500
+                 hover:from-violet-400 hover:to-purple-400
+                 text-white font-bold text-center py-3 rounded-xl transition">
+
+          সাইন আপ করুন
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- 5 JEETWAY -->
+
+    <div class="card bg-slate-900/90 border border-rose-500/40 rounded-2xl overflow-hidden">
+
+      <div class="bg-gradient-to-r from-rose-600 to-pink-600 p-5 flex items-center gap-4">
+
+        <img
+          src="https://heyvip.com/wp-content/uploads/2025/05/jeetway.png"
+          alt="Jeetway"
+          class="h-12 object-contain bg-white rounded-lg px-3 py-1">
+
+        <div>
+
+          <h3 class="text-xl font-bold">
+            JEETWAY
+          </h3>
+
+          <p class="text-rose-100 text-sm">
+            ৫০% মাসিক + বোনাস
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="p-5 space-y-4">
+
+        <div class="bg-rose-500/20 border border-rose-500/40 rounded-xl p-4 text-center">
+
+          <div class="text-3xl font-bold text-rose-400">
+            ৫০%
+          </div>
+
+          <div class="text-sm text-slate-300">
+            মাসিক কমিশন
+          </div>
+
+        </div>
+
+
+        <div class="bg-rose-500/10 border border-rose-500/30 rounded-xl p-3">
+
+          <p class="text-sm font-medium text-rose-400">
+            🎁 অতিরিক্ত ক্যাশ বোনাস
+          </p>
+
+          <p class="text-xs text-slate-300 mt-1">
+            মাসিক ডিপোজিট টার্গেট অনুযায়ী অতিরিক্ত ক্যাশ বোনাস
+          </p>
+
+        </div>
+
+
+        <ul class="space-y-1.5 text-sm text-slate-300">
+
+          <li>✓ বাংলাদেশের জনপ্রিয় প্রোগ্রাম</li>
+          <li>✓ অতিরিক্ত ক্যাশ বোনাস সিস্টেম</li>
+          <li>✓ সহজ লিংক শেয়ার করে আয়</li>
+
+        </ul>
+
+
+        <button
+          onclick="openModal('signupModal')"
+          class="block w-full bg-gradient-to-r from-rose-500 to-pink-500
+                 hover:from-rose-400 hover:to-pink-400
+                 text-white font-bold text-center py-3 rounded-xl transition">
+
+          সাইন আপ করুন
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- 6 BETJDB -->
+
+    <div class="card bg-slate-900/90 border border-orange-500/40 rounded-2xl overflow-hidden">
+
+      <div class="bg-gradient-to-r from-orange-600 to-red-600 p-5 flex items-center gap-4">
+
+        <img
+          src="https://heyvip.com/wp-content/uploads/2025/05/betjdb.png"
+          alt="BetJDB"
+          class="h-12 object-contain bg-white rounded-lg px-3 py-1">
+
+        <div>
+
+          <h3 class="text-xl font-bold">
+            BETJDB
+          </h3>
+
+          <p class="text-orange-100 text-sm">
+            ৪৫% পর্যন্ত সাপ্তাহিক
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="p-5 space-y-4">
+
+        <div class="bg-orange-500/20 border border-orange-500/40 rounded-xl p-4 text-center">
+
+          <div class="text-3xl font-bold text-orange-400">
+            ৪৫%
+          </div>
+
+          <div class="text-sm text-slate-300">
+            সর্বোচ্চ সাপ্তাহিক কমিশন
+          </div>
+
+        </div>
+
+
+        <div class="bg-orange-500/10 border border-orange-500/30 rounded-xl p-3">
+
+          <p class="text-sm font-medium text-orange-400">
+            🎁 অতিরিক্ত ক্যাশ বোনাস
+          </p>
+
+          <p class="text-xs text-slate-300 mt-1">
+            সক্রিয় প্লেয়ার সংখ্যা অনুযায়ী সাপ্তাহিক বোনাস
+          </p>
+
+        </div>
+
+
+        <ul class="space-y-1.5 text-sm text-slate-300">
+
+          <li>✓ শুধুমাত্র সাপ্তাহিক কমিশন</li>
+          <li>✓ দ্রুত পেমেন্ট • স্বচ্ছ রিপোর্ট</li>
+          <li>✓ লাইফটাইম কমিশন</li>
+
+        </ul>
+
+
+        <button
+          onclick="openModal('signupModal')"
+          class="block w-full bg-gradient-to-r from-orange-500 to-red-500
+                 hover:from-orange-400 hover:to-red-400
+                 text-white font-bold text-center py-3 rounded-xl transition">
+
+          সাইন আপ করুন
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- 7 SBJ66 -->
+
+    <div class="card bg-slate-900/90 border border-cyan-500/40 rounded-2xl overflow-hidden md:col-span-2 xl:col-span-1">
+
+      <div class="bg-gradient-to-r from-cyan-600 to-blue-600 p-5 flex items-center gap-4">
+
+        <img
+          src="https://heyvip.com/wp-content/uploads/2026/01/SJB66.png"
+          alt="SBJ66"
+          class="h-12 object-contain bg-white rounded-lg px-3 py-1">
+
+        <div>
+
+          <h3 class="text-xl font-bold">
+            SBJ66
+          </h3>
+
+          <p class="text-cyan-100 text-sm">
+            মাসিক কমিশন
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="p-5 space-y-4">
+
+        <div class="bg-cyan-500/20 border border-cyan-500/40 rounded-xl p-4 text-center">
+
+          <div class="text-2xl font-bold text-cyan-400">
+            প্রতিযোগিতামূলক কমিশন
+          </div>
+
+          <div class="text-sm text-slate-300">
+            প্ল্যাটফর্ম অনুযায়ী মাসিক কমিশন
+          </div>
+
+        </div>
+
+
+        <div class="bg-cyan-500/10 border border-cyan-500/30 rounded-xl p-3">
+
+          <p class="text-sm font-medium text-cyan-400">
+            🎁 অতিরিক্ত সুবিধা
+          </p>
+
+          <p class="text-xs text-slate-300 mt-1">
+            একাধিক প্ল্যাটফর্ম সাপোর্ট + স্থিতিশীল পেমেন্ট
+          </p>
+
+        </div>
+
+
+        <ul class="space-y-1.5 text-sm text-slate-300">
+
+          <li>✓ মাসিক কমিশন স্ট্রাকচার</li>
+          <li>✓ স্বচ্ছ কমিশন বন্টন</li>
+          <li>✓ স্থিতিশীল পেমেন্ট সিস্টেম</li>
+
+        </ul>
+
+
+        <button
+          onclick="openModal('signupModal')"
+          class="block w-full bg-gradient-to-r from-cyan-500 to-blue-500
+                 hover:from-cyan-400 hover:to-blue-400
+                 text-white font-bold text-center py-3 rounded-xl transition">
+
+          সাইন আপ করুন
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BENEFITS
+===================================================== -->
+
+<section class="max-w-6xl mx-auto px-4 pb-16">
+
+  <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">
+    সব প্রোগ্রামেই যে সুবিধাগুলো পাবেন
+  </h2>
+
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+
+      <div class="text-4xl mb-3">
+        🆓
+      </div>
+
+      <h3 class="font-bold text-lg mb-1">
+        ফ্রি রেজিস্ট্রেশন
+      </h3>
+
+      <p class="text-slate-400 text-sm">
+        কোনো ফি ছাড়াই অ্যাকাউন্ট খুলুন
       </p>
-    </div>
-  </section>
-
-  <!-- Programs Grid -->
-  <section class="max-w-7xl mx-auto px-4 py-14">
-    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-
-      <!-- 1. BETJILI -->
-      <div class="card bg-slate-900/90 border border-amber-500/40 rounded-2xl overflow-hidden">
-        <div class="bg-gradient-to-r from-amber-600 to-orange-600 p-5 flex items-center gap-4">
-          <img src="https://heyvip.com/wp-content/uploads/2025/05/betjili-1.png" alt="Betjili" class="h-12 object-contain bg-white rounded-lg px-3 py-1">
-          <div>
-            <h3 class="text-xl font-bold">BETJILI</h3>
-            <p class="text-amber-100 text-sm">৫০% মাসিক / ৪৫% সাপ্তাহিক</p>
-          </div>
-        </div>
-        <div class="p-5 space-y-4">
-          <div class="grid grid-cols-2 gap-3">
-            <div class="bg-amber-500/20 border border-amber-500/40 rounded-xl p-3 text-center">
-              <div class="text-2xl font-bold text-amber-400">৫০%</div>
-              <div class="text-xs text-slate-300">মাসিক কমিশন</div>
-            </div>
-            <div class="bg-amber-500/20 border border-amber-500/40 rounded-xl p-3 text-center">
-              <div class="text-2xl font-bold text-amber-400">৪৫%</div>
-              <div class="text-xs text-slate-300">সাপ্তাহিক</div>
-            </div>
-          </div>
-          <div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-3">
-            <p class="text-sm font-medium text-emerald-400">🎁 Extra Cash Bonus</p>
-            <p class="text-xs text-slate-300 mt-1">ডাউনলাইন পারফরম্যান্স অনুযায়ী অতিরিক্ত বোনাস</p>
-          </div>
-          <ul class="space-y-1.5 text-sm text-slate-300">
-            <li>✓ ফ্রি রেজিস্ট্রেশন • নো ইনভেস্টমেন্ট</li>
-            <li>✓ দ্রুত পেমেন্ট • স্বচ্ছ রিপোর্ট</li>
-            <li>✓ লাইফটাইম রেভিনিউ শেয়ার</li>
-          </ul>
-          <a href="https://betjili11.vip/saf/690u8aoF" target="_blank" class="block w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black font-bold text-center py-3 rounded-xl transition">
-            Sign Up Now
-          </a>
-        </div>
-      </div>
-
-      <!-- 2. MOSTPLAY -->
-      <div class="card bg-slate-900/90 border border-blue-500/40 rounded-2xl overflow-hidden">
-        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-5 flex items-center gap-4">
-          <img src="https://heyvip.com/wp-content/uploads/2025/05/mostplay-1.png" alt="MostPlay" class="h-12 object-contain bg-white rounded-lg px-3 py-1">
-          <div>
-            <h3 class="text-xl font-bold">MOSTPLAY</h3>
-            <p class="text-blue-100 text-sm">৫০% নেট প্রফিট</p>
-          </div>
-        </div>
-        <div class="p-5 space-y-4">
-          <div class="bg-blue-500/20 border border-blue-500/40 rounded-xl p-4 text-center">
-            <div class="text-3xl font-bold text-blue-400">৫০%</div>
-            <div class="text-sm text-slate-300">নেট প্রফিটের অংশীদারিত্ব</div>
-          </div>
-          <div class="grid grid-cols-2 gap-2 text-xs">
-            <div class="bg-slate-800 rounded-lg p-2 text-center">ক্রিকেট এক্সচেঞ্জ</div>
-            <div class="bg-slate-800 rounded-lg p-2 text-center">লাইভ ক্যাসিনো</div>
-            <div class="bg-slate-800 rounded-lg p-2 text-center">টেবিল গেমস</div>
-            <div class="bg-slate-800 rounded-lg p-2 text-center">ফিশিং গেমস</div>
-          </div>
-          <div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-3">
-            <p class="text-sm font-medium text-blue-400">🎁 Extra Benefits</p>
-            <p class="text-xs text-slate-300 mt-1">ফ্রি রেজিস্ট্রেশন + নো ইনভেস্টমেন্ট + দ্রুত পেমেন্ট</p>
-          </div>
-          <a href="https://mostplayipl.club/saf/Q4r0A44m" target="_blank" class="block w-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-400 hover:to-indigo-400 text-white font-bold text-center py-3 rounded-xl transition">
-            Sign Up Now
-          </a>
-        </div>
-      </div>
-
-      <!-- 3. DARAZPLAY -->
-      <div class="card bg-slate-900/90 border border-emerald-500/40 rounded-2xl overflow-hidden">
-        <div class="bg-gradient-to-r from-emerald-600 to-teal-600 p-5 flex items-center gap-4">
-          <img src="https://heyvip.com/wp-content/uploads/2025/05/darazplay.png" alt="DarazPlay" class="h-12 object-contain bg-white rounded-lg px-3 py-1">
-          <div>
-            <h3 class="text-xl font-bold">DARAZPLAY</h3>
-            <p class="text-emerald-100 text-sm">৬০% পর্যন্ত মাসিক</p>
-          </div>
-        </div>
-        <div class="p-5 space-y-4">
-          <div class="bg-emerald-500/20 border border-emerald-500/40 rounded-xl p-4 text-center">
-            <div class="text-3xl font-bold text-emerald-400">৬০%</div>
-            <div class="text-sm text-slate-300">সর্বোচ্চ মাসিক লাইফটাইম কমিশন</div>
-          </div>
-          <div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-3">
-            <p class="text-sm font-medium text-emerald-400">🎁 Extra Cash Bonus</p>
-            <p class="text-xs text-slate-300 mt-1">উচ্চ পারফরম্যান্সে অতিরিক্ত ক্যাশ বোনাস</p>
-          </div>
-          <ul class="space-y-1.5 text-sm text-slate-300">
-            <li>✓ বাংলাদেশ প্রিমিয়াম গেমিং অ্যাপ</li>
-            <li>✓ লাইফটাইম কমিশন</li>
-            <li>✓ উচ্চ পেআউট রেট</li>
-          </ul>
-          <a href="https://darazplay.online/saf/kXvM9k6i" target="_blank" class="block w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-bold text-center py-3 rounded-xl transition">
-            Sign Up Now
-          </a>
-        </div>
-      </div>
-
-      <!-- 4. BETVISA -->
-      <div class="card bg-slate-900/90 border border-violet-500/40 rounded-2xl overflow-hidden">
-        <div class="bg-gradient-to-r from-violet-600 to-purple-600 p-5 flex items-center gap-4">
-          <img src="https://heyvip.com/wp-content/uploads/2025/05/betvisa.png" alt="Betvisa" class="h-12 object-contain bg-white rounded-lg px-3 py-1">
-          <div>
-            <h3 class="text-xl font-bold">BETVISA</h3>
-            <p class="text-violet-100 text-sm">উচ্চ কমিশন প্রোগ্রাম</p>
-          </div>
-        </div>
-        <div class="p-5 space-y-4">
-          <div class="bg-violet-500/20 border border-violet-500/40 rounded-xl p-4 text-center">
-            <div class="text-2xl font-bold text-violet-400">High Commission</div>
-            <div class="text-sm text-slate-300">প্রতিযোগিতামূলক রেট</div>
-          </div>
-          <div class="bg-violet-500/10 border border-violet-500/30 rounded-xl p-3">
-            <p class="text-sm font-medium text-violet-400">🎁 Extra Benefits</p>
-            <p class="text-xs text-slate-300 mt-1">নতুন ও দ্রুত বর্ধনশীল প্ল্যাটফর্ম</p>
-          </div>
-          <ul class="space-y-1.5 text-sm text-slate-300">
-            <li>✓ সহজ শুরু</li>
-            <li>✓ দ্রুত সাপোর্ট</li>
-            <li>✓ লাইফটাইম আয়ের সুযোগ</li>
-          </ul>
-          <a href="https://betvisafun.com/saf/WWa7uoma" target="_blank" class="block w-full bg-gradient-to-r from-violet-500 to-purple-500 hover:from-violet-400 hover:to-purple-400 text-white font-bold text-center py-3 rounded-xl transition">
-            Sign Up Now
-          </a>
-        </div>
-      </div>
-
-      <!-- 5. JEETWAY -->
-      <div class="card bg-slate-900/90 border border-rose-500/40 rounded-2xl overflow-hidden">
-        <div class="bg-gradient-to-r from-rose-600 to-pink-600 p-5 flex items-center gap-4">
-          <img src="https://heyvip.com/wp-content/uploads/2025/05/jeetway.png" alt="Jeetway" class="h-12 object-contain bg-white rounded-lg px-3 py-1">
-          <div>
-            <h3 class="text-xl font-bold">JEETWAY</h3>
-            <p class="text-rose-100 text-sm">৫০% মাসিক + বোনাস</p>
-          </div>
-        </div>
-        <div class="p-5 space-y-4">
-          <div class="bg-rose-500/20 border border-rose-500/40 rounded-xl p-4 text-center">
-            <div class="text-3xl font-bold text-rose-400">৫০%</div>
-            <div class="text-sm text-slate-300">মাসিক কমিশন</div>
-          </div>
-          <div class="bg-rose-500/10 border border-rose-500/30 rounded-xl p-3">
-            <p class="text-sm font-medium text-rose-400">🎁 Extra Cash Bonus</p>
-            <p class="text-xs text-slate-300 mt-1">মাসিক ডিপোজিট টার্গেট অনুযায়ী অতিরিক্ত ক্যাশ বোনাস</p>
-          </div>
-          <ul class="space-y-1.5 text-sm text-slate-300">
-            <li>✓ বাংলাদেশের জনপ্রিয় প্রোগ্রাম</li>
-            <li>✓ অতিরিক্ত ক্যাশ বোনাস সিস্টেম</li>
-            <li>✓ সহজ লিংক শেয়ার করে আয়</li>
-          </ul>
-          <a href="https://jeetwayaffiliate.com/saf/Th21lHTe" target="_blank" class="block w-full bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-400 hover:to-pink-400 text-white font-bold text-center py-3 rounded-xl transition">
-            Sign Up Now
-          </a>
-        </div>
-      </div>
-
-      <!-- 6. BETJDB -->
-      <div class="card bg-slate-900/90 border border-orange-500/40 rounded-2xl overflow-hidden">
-        <div class="bg-gradient-to-r from-orange-600 to-red-600 p-5 flex items-center gap-4">
-          <img src="https://heyvip.com/wp-content/uploads/2025/05/betjdb.png" alt="BetJDB" class="h-12 object-contain bg-white rounded-lg px-3 py-1">
-          <div>
-            <h3 class="text-xl font-bold">BETJDB</h3>
-            <p class="text-orange-100 text-sm">৪৫% পর্যন্ত সাপ্তাহিক</p>
-          </div>
-        </div>
-        <div class="p-5 space-y-4">
-          <div class="bg-orange-500/20 border border-orange-500/40 rounded-xl p-4 text-center">
-            <div class="text-3xl font-bold text-orange-400">৪৫%</div>
-            <div class="text-sm text-slate-300">সর্বোচ্চ সাপ্তাহিক কমিশন</div>
-          </div>
-          <div class="bg-orange-500/10 border border-orange-500/30 rounded-xl p-3">
-            <p class="text-sm font-medium text-orange-400">🎁 Extra Cash Bonus</p>
-            <p class="text-xs text-slate-300 mt-1">সক্রিয় প্লেয়ার সংখ্যা অনুযায়ী সাপ্তাহিক বোনাস</p>
-          </div>
-          <ul class="space-y-1.5 text-sm text-slate-300">
-            <li>✓ শুধুমাত্র সাপ্তাহিক কমিশন</li>
-            <li>✓ দ্রুত পেমেন্ট • স্বচ্ছ রিপোর্ট</li>
-            <li>✓ লাইফটাইম কমিশন</li>
-          </ul>
-          <a href="https://betjdb.net/saf/b81lQ4Yw" target="_blank" class="block w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 text-white font-bold text-center py-3 rounded-xl transition">
-            Sign Up Now
-          </a>
-        </div>
-      </div>
-
-      <!-- 7. SBJ66 -->
-      <div class="card bg-slate-900/90 border border-cyan-500/40 rounded-2xl overflow-hidden md:col-span-2 xl:col-span-1">
-        <div class="bg-gradient-to-r from-cyan-600 to-blue-600 p-5 flex items-center gap-4">
-          <img src="https://heyvip.com/wp-content/uploads/2026/01/SJB66.png" alt="SBJ66" class="h-12 object-contain bg-white rounded-lg px-3 py-1">
-          <div>
-            <h3 class="text-xl font-bold">SBJ66</h3>
-            <p class="text-cyan-100 text-sm">মাসিক কমিশন</p>
-          </div>
-        </div>
-        <div class="p-5 space-y-4">
-          <div class="bg-cyan-500/20 border border-cyan-500/40 rounded-xl p-4 text-center">
-            <div class="text-2xl font-bold text-cyan-400">Competitive %</div>
-            <div class="text-sm text-slate-300">প্ল্যাটফর্ম অনুযায়ী মাসিক কমিশন</div>
-          </div>
-          <div class="bg-cyan-500/10 border border-cyan-500/30 rounded-xl p-3">
-            <p class="text-sm font-medium text-cyan-400">🎁 Extra Benefits</p>
-            <p class="text-xs text-slate-300 mt-1">একাধিক প্ল্যাটফর্ম সাপোর্ট + স্থিতিশীল পেমেন্ট</p>
-          </div>
-          <ul class="space-y-1.5 text-sm text-slate-300">
-            <li>✓ মাসিক কমিশন স্ট্রাকচার</li>
-            <li>✓ স্বচ্ছ কমিশন বন্টন</li>
-            <li>✓ স্থিতিশীল পেমেন্ট সিস্টেম</li>
-          </ul>
-          <a href="http://sbj66.fun/saf/d4Ll9WT2" target="_blank" class="block w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-bold text-center py-3 rounded-xl transition">
-            Sign Up Now
-          </a>
-        </div>
-      </div>
 
     </div>
-  </section>
 
-  <!-- Benefits -->
-  <section class="max-w-6xl mx-auto px-4 pb-16">
-    <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">সব প্রোগ্রামেই যে সুবিধাগুলো পাবেন</h2>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-        <div class="text-4xl mb-3">🆓</div>
-        <h3 class="font-bold text-lg mb-1">ফ্রি রেজিস্ট্রেশন</h3>
-        <p class="text-slate-400 text-sm">কোনো ফি ছাড়াই অ্যাকাউন্ট খুলুন</p>
+
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+
+      <div class="text-4xl mb-3">
+        💰
       </div>
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-        <div class="text-4xl mb-3">💰</div>
-        <h3 class="font-bold text-lg mb-1">শূন্য বিনিয়োগ</h3>
-        <p class="text-slate-400 text-sm">শুরু করতে কোনো টাকা লাগবে না</p>
-      </div>
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-        <div class="text-4xl mb-3">⚡</div>
-        <h3 class="font-bold text-lg mb-1">দ্রুত পেমেন্ট</h3>
-        <p class="text-slate-400 text-sm">সাপ্তাহিক / মাসিক হিসাব</p>
-      </div>
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-        <div class="text-4xl mb-3">📈</div>
-        <h3 class="font-bold text-lg mb-1">লাইফটাইম কমিশন</h3>
-        <p class="text-slate-400 text-sm">একবার রেফার করলে আজীবন আয়</p>
-      </div>
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-        <div class="text-4xl mb-3">🎁</div>
-        <h3 class="font-bold text-lg mb-1">Extra Cash Bonus</h3>
-        <p class="text-slate-400 text-sm">পারফরম্যান্স অনুযায়ী অতিরিক্ত বোনাস</p>
-      </div>
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-        <div class="text-4xl mb-3">📊</div>
-        <h3 class="font-bold text-lg mb-1">স্বচ্ছ রিপোর্ট</h3>
-        <p class="text-slate-400 text-sm">রিয়েল-টাইম ডেটা অ্যাক্সেস</p>
-      </div>
+
+      <h3 class="font-bold text-lg mb-1">
+        শূন্য বিনিয়োগ
+      </h3>
+
+      <p class="text-slate-400 text-sm">
+        শুরু করতে কোনো টাকা লাগবে না
+      </p>
+
     </div>
-  </section>
 
-  <!-- Social Section -->
-  <section class="border-t border-white/10 bg-black/40 py-12">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h3 class="text-xl font-bold mb-6">সাপোর্ট ও সোশ্যাল মিডিয়া</h3>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="https://www.facebook.com/profile.php?id=61593240359036" target="_blank"
-           class="flex items-center gap-2 bg-[#1877F2] hover:bg-[#166fe5] px-6 py-3 rounded-xl font-medium transition">
-          <i class="fa-brands fa-facebook text-xl"></i> Facebook
-        </a>
-        <a href="https://t.me/AffSupportAgent" target="_blank"
-           class="flex items-center gap-2 bg-[#0088cc] hover:bg-[#0077b5] px-6 py-3 rounded-xl font-medium transition">
-          <i class="fa-brands fa-telegram text-xl"></i> Telegram Channel
-        </a>
-        <a href="https://www.youtube.com/@HVPartner" target="_blank"
-           class="flex items-center gap-2 bg-[#FF0000] hover:bg-[#e60000] px-6 py-3 rounded-xl font-medium transition">
-          <i class="fa-brands fa-youtube text-xl"></i> YouTube
-        </a>
+
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+
+      <div class="text-4xl mb-3">
+        ⚡
       </div>
-    </div>
-  </section>
 
-  <footer class="py-6 text-center text-slate-500 text-sm border-t border-white/5">
-    <p>© 2026 HeyVIP Partners • সব তথ্য তুলনামূলক উদ্দেশ্যে দেওয়া হয়েছে</p>
-  </footer>
+      <h3 class="font-bold text-lg mb-1">
+        দ্রুত পেমেন্ট
+      </h3>
+
+      <p class="text-slate-400 text-sm">
+        সাপ্তাহিক / মাসিক হিসাব
+      </p>
+
+    </div>
+
+
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+
+      <div class="text-4xl mb-3">
+        📈
+      </div>
+
+      <h3 class="font-bold text-lg mb-1">
+        লাইফটাইম কমিশন
+      </h3>
+
+      <p class="text-slate-400 text-sm">
+        একবার রেফার করলে দীর্ঘমেয়াদি আয়
+      </p>
+
+    </div>
+
+
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+
+      <div class="text-4xl mb-3">
+        🎁
+      </div>
+
+      <h3 class="font-bold text-lg mb-1">
+        অতিরিক্ত ক্যাশ বোনাস
+      </h3>
+
+      <p class="text-slate-400 text-sm">
+        পারফরম্যান্স অনুযায়ী অতিরিক্ত বোনাস
+      </p>
+
+    </div>
+
+
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+
+      <div class="text-4xl mb-3">
+        📊
+      </div>
+
+      <h3 class="font-bold text-lg mb-1">
+        স্বচ্ছ রিপোর্ট
+      </h3>
+
+      <p class="text-slate-400 text-sm">
+        রিয়েল-টাইম ডেটা অ্যাক্সেস
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SOCIAL / SUPPORT
+===================================================== -->
+
+<section class="border-t border-white/10 bg-black/40 py-12">
+
+  <div class="max-w-4xl mx-auto px-4 text-center">
+
+    <h3 class="text-xl font-bold mb-6">
+      সাপোর্ট ও সামাজিক যোগাযোগ
+    </h3>
+
+
+    <div class="flex flex-wrap justify-center gap-4">
+
+
+      <a
+        href="https://www.facebook.com/profile.php?id=61593240359036"
+        target="_blank"
+        class="flex items-center gap-2 bg-[#1877F2]
+               hover:bg-[#166fe5]
+               px-6 py-3 rounded-xl font-medium transition">
+
+        <i class="fa-brands fa-facebook text-xl"></i>
+
+        ফেসবুক
+
+      </a>
+
+
+      <a
+        href="https://t.me/AffSupportAgent"
+        target="_blank"
+        class="flex items-center gap-2 bg-[#0088cc]
+               hover:bg-[#0077b5]
+               px-6 py-3 rounded-xl font-medium transition">
+
+        <i class="fa-brands fa-telegram text-xl"></i>
+
+        টেলিগ্রাম চ্যানেল
+
+      </a>
+
+
+      <a
+        href="https://www.youtube.com/@HVPartner"
+        target="_blank"
+        class="flex items-center gap-2 bg-[#FF0000]
+               hover:bg-[#e60000]
+               px-6 py-3 rounded-xl font-medium transition">
+
+        <i class="fa-brands fa-youtube text-xl"></i>
+
+        ইউটিউব
+
+      </a>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="py-6 text-center text-slate-500 text-sm border-t border-white/5">
+
+  <p>
+    © ২০২৬ HeyVIP Partners • সব তথ্য তুলনামূলক উদ্দেশ্যে দেওয়া হয়েছে
+  </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+  /* Open Modal */
+
+  function openModal(modalId) {
+
+    const modal = document.getElementById(modalId);
+
+    if (modal) {
+
+      modal.classList.add('active');
+
+      document.body.style.overflow = 'hidden';
+
+    }
+
+  }
+
+
+  /* Close Modal */
+
+  function closeModal(modalId) {
+
+    const modal = document.getElementById(modalId);
+
+    if (modal) {
+
+      modal.classList.remove('active');
+
+      document.body.style.overflow = '';
+
+    }
+
+  }
+
+
+  /* Close when clicking outside */
+
+  function closeModalOutside(event, modalId) {
+
+    if (event.target.id === modalId) {
+
+      closeModal(modalId);
+
+    }
+
+  }
+
+
+  /* ESC Button */
+
+  document.addEventListener('keydown', function(event) {
+
+    if (event.key === 'Escape') {
+
+      closeModal('signupModal');
+
+      closeModal('loginModal');
+
+    }
+
+  });
+
+
+</script>
+
 
 </body>
 </html>
