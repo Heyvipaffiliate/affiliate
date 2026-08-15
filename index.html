@@ -62,12 +62,19 @@
       z-index: 1;
     }
 
-    /* Floating Telegram Button - Small Circle + Bengali Tooltip */
+    /* Floating Telegram Button - Circle + always visible Bengali label */
     .telegram-float {
       position: fixed;
       bottom: 30px;
       right: 25px;
       z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .telegram-float .icon-circle {
       width: 60px;
       height: 60px;
       background: #0088cc;
@@ -76,34 +83,22 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 8px 25px rgba(0,136,204,0.5);
-      transition: all 0.3s ease;
       animation: pulse 2s infinite;
-      text-decoration: none;
     }
-    .telegram-float:hover {
+    .telegram-float:hover .icon-circle {
       transform: scale(1.1);
       background: #0077b5;
     }
-    .telegram-float::after {
-      content: "টেলিগ্রাম সাপোর্ট";
-      position: absolute;
-      right: 70px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #0088cc;
-      color: white;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 13px;
+    .telegram-float .label {
+      margin-top: 6px;
+      background: #000;
+      color: #fff;
+      font-size: 12px;
       font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
       white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-    .telegram-float:hover::after {
-      opacity: 1;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(0,136,204,0.6); }
@@ -119,12 +114,12 @@
       top: 100%;
       left: 50%;
       transform: translateX(-50%);
-      min-width: 220px;
+      min-width: 240px;
       background: #0f172a;
       border: 1px solid rgba(245, 158, 11, 0.4);
       border-radius: 12px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-      z-index: 100;
+      z-index: 999;
       overflow: hidden;
       margin-top: 8px;
     }
@@ -134,7 +129,7 @@
       padding: 12px 16px;
       color: #e2e8f0;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 500;
       border-bottom: 1px solid rgba(255,255,255,0.06);
       transition: all 0.2s ease;
@@ -152,9 +147,12 @@
 </head>
 <body class="bg-slate-950 text-white">
 
-  <!-- Floating Telegram Support Button (Small Circle + বাংলা Tooltip) -->
+  <!-- Floating Telegram Support Button -->
   <a href="https://t.me/heyvipBD" target="_blank" class="telegram-float" title="টেলিগ্রাম সাপোর্ট">
-    <i class="fa-brands fa-telegram text-white text-3xl"></i>
+    <div class="icon-circle">
+      <i class="fa-brands fa-telegram text-white text-3xl"></i>
+    </div>
+    <span class="label">টেলিগ্রাম সাপোর্ট</span>
   </a>
 
   <!-- Header -->
@@ -165,7 +163,6 @@
       </div>
 
       <div class="flex items-center gap-2 md:gap-4">
-        <!-- Social Links (Desktop) -->
         <div class="hidden md:flex gap-4 text-sm font-medium items-center">
           <a href="https://www.facebook.com/profile.php?id=61593240359036" target="_blank" class="hover:text-blue-400 transition flex items-center gap-1.5">
             <i class="fa-brands fa-facebook text-lg"></i> ফেসবুক
@@ -178,35 +175,33 @@
           </a>
         </div>
 
-        <!-- TOP Button 1 -->
         <div class="dropdown">
           <button class="dropdown-toggle bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black font-bold text-sm px-4 py-2 rounded-xl transition flex items-center gap-1.5">
             সাইন আপ <i class="fa-solid fa-chevron-down text-xs"></i>
           </button>
           <div class="dropdown-menu">
-            <a href="https://betjili11.vip/saf/690u8aoF" target="_blank">BETJILI</a>
-            <a href="https://mostplayipl.club/saf/Q4r0A44m" target="_blank">MOSTPLAY</a>
-            <a href="https://darazplay.online/saf/kXvM9k6i" target="_blank">DARAZPLAY</a>
-            <a href="https://betvisafun.com/saf/WWa7uoma" target="_blank">BETVISA</a>
-            <a href="https://jeetwayaffiliate.com/saf/Th21lHTe" target="_blank">JEETWAY</a>
-            <a href="https://betjdb.net/saf/b81lQ4Yw" target="_blank">BETJDB</a>
-            <a href="http://sbj66.fun/saf/d4Ll9WT2" target="_blank">SBJ66</a>
+            <a href="https://betjili11.vip/saf/690u8aoF" target="_blank">বেটজিলি</a>
+            <a href="https://mostplayipl.club/saf/Q4r0A44m" target="_blank">মোস্টপ্লে</a>
+            <a href="https://darazplay.online/saf/kXvM9k6i" target="_blank">দারাজপ্লে</a>
+            <a href="https://betvisafun.com/saf/WWa7uoma" target="_blank">বেটভিসা</a>
+            <a href="https://jeetwayaffiliate.com/saf/Th21lHTe" target="_blank">জিতওয়ে</a>
+            <a href="https://betjdb.net/saf/b81lQ4Yw" target="_blank">বেটজেডিবি</a>
+            <a href="http://sbj66.fun/saf/d4Ll9WT2" target="_blank">এসবিজে৬৬</a>
           </div>
         </div>
 
-        <!-- TOP Button 2 -->
         <div class="dropdown">
           <button class="dropdown-toggle bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-bold text-sm px-4 py-2 rounded-xl transition flex items-center gap-1.5">
             জয়েন নাও <i class="fa-solid fa-chevron-down text-xs"></i>
           </button>
           <div class="dropdown-menu">
-            <a href="https://betjili11.vip/saf/690u8aoF" target="_blank">BETJILI</a>
-            <a href="https://mostplayipl.club/saf/Q4r0A44m" target="_blank">MOSTPLAY</a>
-            <a href="https://darazplay.online/saf/kXvM9k6i" target="_blank">DARAZPLAY</a>
-            <a href="https://betvisafun.com/saf/WWa7uoma" target="_blank">BETVISA</a>
-            <a href="https://jeetwayaffiliate.com/saf/Th21lHTe" target="_blank">JEETWAY</a>
-            <a href="https://betjdb.net/saf/b81lQ4Yw" target="_blank">BETJDB</a>
-            <a href="http://sbj66.fun/saf/d4Ll9WT2" target="_blank">SBJ66</a>
+            <a href="https://betjili11.vip/saf/690u8aoF" target="_blank">বেটজিলি</a>
+            <a href="https://mostplayipl.club/saf/Q4r0A44m" target="_blank">মোস্টপ্লে</a>
+            <a href="https://darazplay.online/saf/kXvM9k6i" target="_blank">দারাজপ্লে</a>
+            <a href="https://betvisafun.com/saf/WWa7uoma" target="_blank">বেটভিসা</a>
+            <a href="https://jeetwayaffiliate.com/saf/Th21lHTe" target="_blank">জিতওয়ে</a>
+            <a href="https://betjdb.net/saf/b81lQ4Yw" target="_blank">বেটজেডিবি</a>
+            <a href="http://sbj66.fun/saf/d4Ll9WT2" target="_blank">এসবিজে৬৬</a>
           </div>
         </div>
       </div>
@@ -214,7 +209,7 @@
   </header>
 
   <!-- Hero Section with Video -->
-  <section class="relative h-[420px] md:h-[560px] flex items-center justify-center overflow-hidden">
+  <section class="relative h-[420px] md:h-[560px] flex items-center justify-center overflow-visible">
     
     <div class="video-container">
       <video class="video-bg" autoplay muted loop playsinline preload="auto">
@@ -239,13 +234,13 @@
             সাইন আপ নাও <i class="fa-solid fa-chevron-down text-sm"></i>
           </button>
           <div class="dropdown-menu">
-            <a href="https://betjili11.vip/saf/690u8aoF" target="_blank">BETJILI</a>
-            <a href="https://mostplayipl.club/saf/Q4r0A44m" target="_blank">MOSTPLAY</a>
-            <a href="https://darazplay.online/saf/kXvM9k6i" target="_blank">DARAZPLAY</a>
-            <a href="https://betvisafun.com/saf/WWa7uoma" target="_blank">BETVISA</a>
-            <a href="https://jeetwayaffiliate.com/saf/Th21lHTe" target="_blank">JEETWAY</a>
-            <a href="https://betjdb.net/saf/b81lQ4Yw" target="_blank">BETJDB</a>
-            <a href="http://sbj66.fun/saf/d4Ll9WT2" target="_blank">SBJ66</a>
+            <a href="https://betjili11.vip/saf/690u8aoF" target="_blank">বেটজিলি</a>
+            <a href="https://mostplayipl.club/saf/Q4r0A44m" target="_blank">মোস্টপ্লে</a>
+            <a href="https://darazplay.online/saf/kXvM9k6i" target="_blank">দারাজপ্লে</a>
+            <a href="https://betvisafun.com/saf/WWa7uoma" target="_blank">বেটভিসা</a>
+            <a href="https://jeetwayaffiliate.com/saf/Th21lHTe" target="_blank">জিতওয়ে</a>
+            <a href="https://betjdb.net/saf/b81lQ4Yw" target="_blank">বেটজেডিবি</a>
+            <a href="http://sbj66.fun/saf/d4Ll9WT2" target="_blank">এসবিজে৬৬</a>
           </div>
         </div>
 
@@ -254,13 +249,13 @@
             জয়েন নাও <i class="fa-solid fa-chevron-down text-sm"></i>
           </button>
           <div class="dropdown-menu">
-            <a href="https://betjili11.vip/saf/690u8aoF" target="_blank">BETJILI</a>
-            <a href="https://mostplayipl.club/saf/Q4r0A44m" target="_blank">MOSTPLAY</a>
-            <a href="https://darazplay.online/saf/kXvM9k6i" target="_blank">DARAZPLAY</a>
-            <a href="https://betvisafun.com/saf/WWa7uoma" target="_blank">BETVISA</a>
-            <a href="https://jeetwayaffiliate.com/saf/Th21lHTe" target="_blank">JEETWAY</a>
-            <a href="https://betjdb.net/saf/b81lQ4Yw" target="_blank">BETJDB</a>
-            <a href="http://sbj66.fun/saf/d4Ll9WT2" target="_blank">SBJ66</a>
+            <a href="https://betjili11.vip/saf/690u8aoF" target="_blank">বেটজিলি</a>
+            <a href="https://mostplayipl.club/saf/Q4r0A44m" target="_blank">মোস্টপ্লে</a>
+            <a href="https://darazplay.online/saf/kXvM9k6i" target="_blank">দারাজপ্লে</a>
+            <a href="https://betvisafun.com/saf/WWa7uoma" target="_blank">বেটভিসা</a>
+            <a href="https://jeetwayaffiliate.com/saf/Th21lHTe" target="_blank">জিতওয়ে</a>
+            <a href="https://betjdb.net/saf/b81lQ4Yw" target="_blank">বেটজেডিবি</a>
+            <a href="http://sbj66.fun/saf/d4Ll9WT2" target="_blank">এসবিজে৬৬</a>
           </div>
         </div>
       </div>
